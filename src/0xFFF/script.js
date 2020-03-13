@@ -2,7 +2,7 @@
   256x256x256 - script.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2018-02-27 12:27:03
-  @Last Modified time: 2020-03-13 16:25:56
+  @Last Modified time: 2020-03-13 16:44:00
 \*----------------------------------------*/
 
 const FAIL_AFTER = 14000;
@@ -57,8 +57,10 @@ let LevelManager = () => {
 				onGameWin();
 				return false;
 			}
-			document.querySelector(".lvl").innerText = levelName;
-			requestLevel(levelName);
+			if(document.querySelector(".lvl")){
+				document.querySelector(".lvl").innerText = levelName;
+				requestLevel(levelName);	
+			}
 		},
 		prev : () => {
 			availableLVL.push(historyLVL.pop());
@@ -68,8 +70,10 @@ let LevelManager = () => {
 				onGameLoose();
 				return false;
 			}
-			document.querySelector(".lvl").innerText = levelName;
-			requestLevel(levelName);
+			if(document.querySelector(".lvl")){
+				document.querySelector(".lvl").innerText = levelName;
+				requestLevel(levelName);	
+			}
 		},
 		size : (ratio) => {
 			iframeWrapperDom.style.height = ((ratio) * 256)+"px";
