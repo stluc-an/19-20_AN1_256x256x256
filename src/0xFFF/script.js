@@ -2,7 +2,7 @@
   256x256x256 - script.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2018-02-27 12:27:03
-  @Last Modified time: 2020-03-13 15:55:46
+  @Last Modified time: 2020-03-13 16:25:56
 \*----------------------------------------*/
 
 const FAIL_AFTER = 14000;
@@ -175,7 +175,7 @@ const Animations = {
 				},
 				atStoping : () => {
 					target.style.fontSize = this.FS + "px";
-					looseAnim();
+					looseAnim(target);
 				}
 			}).start();
 		}
@@ -205,7 +205,7 @@ const Animations = {
 				},
 				atStoping : () => {
 					target.style.fontSize = this.FS + "px";
-					winAnim();
+					winAnim(target);
 				}
 			}).start();
 		}
