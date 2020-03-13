@@ -2,7 +2,7 @@
   256x256x256 - script.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2018-02-27 12:27:03
-  @Last Modified time: 2020-03-13 15:49:44
+  @Last Modified time: 2020-03-13 15:55:46
 \*----------------------------------------*/
 
 const FAIL_AFTER = 14000;
@@ -151,7 +151,7 @@ const Animations = {
 		}).start();
 	},
 	Loose : (target) => {
-		let looseAnim = () => {
+		let looseAnim = (target) => {
 			new Animator({
 				duration : 1500,
 				atStarting : () => {
@@ -179,10 +179,10 @@ const Animations = {
 				}
 			}).start();
 		}
-		looseAnim();
+		looseAnim(target);
 	},
 	Win : (target) => {
-		let winAnim = () => {
+		let winAnim = (target) => {
 			new Animator({
 				duration : 500,
 				atStarting : () => {
@@ -208,8 +208,8 @@ const Animations = {
 					winAnim();
 				}
 			}).start();
-			winAnim();
 		}
+		winAnim(target);
 	},
 	Close : (callback) => {
 		new Animator({
