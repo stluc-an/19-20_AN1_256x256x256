@@ -2,7 +2,7 @@
   256x256x256 - script.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2018-02-27 12:27:03
-  @Last Modified time: 2020-02-28 19:44:42
+  @Last Modified time: 2020-03-13 15:39:24
 \*----------------------------------------*/
 
 const FAIL_AFTER = 14000;
@@ -151,59 +151,63 @@ const Animations = {
 		}).start();
 	},
 	Loose : (target) => {
-		new Animator({
-			duration : 1500,
-			atStarting : () => {
-				this.FS = 20;
-			},
-			atRunning : ({cursor}) => {
-				let percent = cursor;
-				percent = Math.pow(percent, 0.3);
-				target.style.fontSize = (this.FS + 50 * Math.sin(
-															Math.PI * lerp(
-																1, 0.95, lerp(
-																	1, 0.2, Math.abs(
-																		Math.sin(
-																			0.3 * percent*2*Math.PI
+		let looseAnim = () => {
+			new Animator({
+				duration : 1500,
+				atStarting : () => {
+					this.FS = 20;
+				},
+				atRunning : ({cursor}) => {
+					let percent = cursor;
+					percent = Math.pow(percent, 0.3);
+					target.style.fontSize = (this.FS + 50 * Math.sin(
+																Math.PI * lerp(
+																	1, 0.95, lerp(
+																		1, 0.2, Math.abs(
+																			Math.sin(
+																				0.3 * percent*2*Math.PI
+																			)
 																		)
 																	)
 																)
 															)
-														)
-										) + "px";
-			},
-			atStoping : () => {
-				target.style.fontSize = this.FS + "px";
-				this.start();
-			}
-		}).start();
+											) + "px";
+				},
+				atStoping : () => {
+					target.style.fontSize = this.FS + "px";
+					looseAnim();
+				}
+			}).start();
+		}
 	},
 	Win : (target) => {
-		new Animator({
-			duration : 500,
-			atStarting : () => {
-				this.FS = 20;
-			},
-			atRunning : ({cursor}) => {
-				let percent = cursor;
-				target.style.fontSize = (this.FS + 50 * Math.sin(
-															-1 * Math.PI * lerp(
-																1, 0.95, lerp(
-																	1, 0.2, Math.abs(
-																		Math.sin(
-																			0.3 * percent*2*Math.PI
+		let winAnim = () => {
+			new Animator({
+				duration : 500,
+				atStarting : () => {
+					this.FS = 20;
+				},
+				atRunning : ({cursor}) => {
+					let percent = cursor;
+					target.style.fontSize = (this.FS + 50 * Math.sin(
+																-1 * Math.PI * lerp(
+																	1, 0.95, lerp(
+																		1, 0.2, Math.abs(
+																			Math.sin(
+																				0.3 * percent*2*Math.PI
+																			)
 																		)
 																	)
 																)
 															)
-														)
-										) + "px";
-			},
-			atStoping : () => {
-				target.style.fontSize = this.FS + "px";
-				this.start();
-			}
-		}).start();
+											) + "px";
+				},
+				atStoping : () => {
+					target.style.fontSize = this.FS + "px";
+					winAnim();
+				}
+			}).start();
+		}
 	},
 	Close : (callback) => {
 		new Animator({
