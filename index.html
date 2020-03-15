@@ -15,9 +15,7 @@
 				padding-left:15px;
 			}
 			.loading:before{
-				content:"·";
-				font-size: 2em;
-				line-height: 0.7em;
+				content:"🔎";
 				position: absolute;
 				animation-name: _loading;
   				animation-duration: 0.5s;
@@ -29,7 +27,7 @@
 				color:#e31b4a;
 			}
 			.error:before{
-				content:"x";
+				content:"✘";
 				position: absolute;
 				left:5px;
 			}
@@ -37,7 +35,7 @@
 				color:#9be31b;
 			}
 			.success:before{
-				content:"v";
+				content:"✔";
 				position: absolute;
 				left:5px;
 			}
@@ -45,6 +43,9 @@
 				text-align: center;
 				width: 100%;
 				display: block;
+			}
+			a{
+				color: inherit;
 			}
 			@keyframes _loading {
 				from {left: 0}
@@ -55,6 +56,7 @@
 	<body>
 		<ul>
 		</ul>
+
 		<div id="progressBar">
 			<svg width="100%" height="24px">
 				<rect rx="3" ry="3" x="0" y="0" width="100%" height="100%" fill="#D8D8D8" />
@@ -62,7 +64,33 @@
 			</svg>
 		</div>
 		<a id="link" href="https://stluc-an.github.io/19-20_AN1_256x256x256/src/0xFFF/index.html" target="_blank">Run 256x256x256</a>
+
 		<script type="text/javascript">
+
+			var UID = {
+				_current: 0,
+				getNew: function(){
+					this._current++;
+					return this._current;
+				}
+			};
+
+			HTMLElement.prototype.pseudoStyle = function(element,prop,value){
+				var _this = this;
+				var _sheetId = "pseudoStyles";
+				var _head = document.head || document.getElementsByTagName('head')[0];
+				var _sheet = document.getElementById(_sheetId) || document.createElement('style');
+				_sheet.id = _sheetId;
+				var className = "pseudoStyle" + UID.getNew();
+				
+				_this.className +=  " "+className; 
+				
+				_sheet.innerHTML += " ."+className+":"+element+"{"+prop+":"+value+"}";
+				_head.appendChild(_sheet);
+				return this;
+			};
+
+
 			const progressBar = (() => {
 				const progressBar = document.querySelector("#progressBar");
 				const progress = progressBar.querySelector(".progress");
@@ -108,6 +136,7 @@
 						}
 					};
 					document.querySelector("li[data_id='"+lvl_id+"']").classList.add("loading");
+					document.querySelector("li[data_id='"+lvl_id+"']").pseudoStyle("before", "animation-delay", (Math.random()*0.5)+"s");
 					request.send();
 				}).catch(error => { console.log(lvl_id + " : it does not exist!" ) });
 			}
@@ -122,11 +151,18 @@
 									while(k.length<2) k = "0"+k;
 									k = k.toUpperCase();
 									k = "0x"+k;
+
 									const li = document.createElement("li");
 									li.setAttribute("data_id", k);
-									li.innerText=k;
+									const a = document.createElement("a");
+									a.setAttribute("target", "_blank");
+									a.setAttribute("href", "https://stluc-an.github.io/19-20_AN1_256x256x256/src/0xFFF/index.html"+"?lvl="+JSON.stringify([k]));
+									a.innerText=k;
+									li.append(a);
 									document.querySelector("ul").append(li);
+									
 									progressBar.addFull();
+									
 									return k;
 								});
 					Promise.all(lvls.map(testLevel))
