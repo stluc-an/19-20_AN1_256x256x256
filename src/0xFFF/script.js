@@ -2,11 +2,14 @@
   256x256x256 - script.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2018-02-27 12:27:03
-  @Last Modified time: 2020-03-13 16:44:00
+  @Last Modified time: 2020-03-15 14:33:55
 \*----------------------------------------*/
 
+
+
+var searchParams = new URLSearchParams(location.search);
 const FAIL_AFTER = 14000;
-const LEVELS = [
+const LEVELS = JSON.parse(searchParams.get("lvl")) || [
 	"0x0", "0x1", "0x2", "0x3", 
 	"0x4", "0x5", "0x6", "0x7", 
 	"0x8", "0x9", "0xA", "0xB", 

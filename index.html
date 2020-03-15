@@ -1,11 +1,151 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-</head>
-<body>
-	<script type="text/javascript">
-		location.pathname += "./src/0xFFF/index.html"
-	</script>
-</body>
+	<head>
+		<title></title>
+		<style type="text/css">
+			ul{
+				list-style-type: none;
+				margin:0;
+				padding:0;
+				column-count: 16;
+			}
+			li{
+				position: relative;
+				margin:0;
+				padding-left:15px;
+			}
+			.loading:before{
+				content:"·";
+				font-size: 2em;
+				line-height: 0.7em;
+				position: absolute;
+				animation-name: _loading;
+  				animation-duration: 0.5s;
+  				animation-direction: alternate;
+  				animation-iteration-count: infinite;
+  				animation-timing-function: ease-in-out;
+			}
+			.error{
+				color:#e31b4a;
+			}
+			.error:before{
+				content:"x";
+				position: absolute;
+				left:5px;
+			}
+			.success{
+				color:#9be31b;
+			}
+			.success:before{
+				content:"v";
+				position: absolute;
+				left:5px;
+			}
+			#link{
+				text-align: center;
+				width: 100%;
+				display: block;
+			}
+			@keyframes _loading {
+				from {left: 0}
+				to {left:-5px;}
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+		</ul>
+		<div id="progressBar">
+			<svg width="100%" height="24px">
+				<rect rx="3" ry="3" x="0" y="0" width="100%" height="100%" fill="#D8D8D8" />
+				<rect class="progress" rx="3" ry="3" x="0" y="0" width="100%" height="100%" fill="#fff123" data-full="0" data-fill="0"/>
+			</svg>
+		</div>
+		<a id="link" href="https://stluc-an.github.io/19-20_AN1_256x256x256/src/0xFFF/index.html" target="_blank">Run 256x256x256</a>
+		<script type="text/javascript">
+			const progressBar = (() => {
+				const progressBar = document.querySelector("#progressBar");
+				const progress = progressBar.querySelector(".progress");
+				const _update = (full, fill) => {
+					progress.setAttribute("data-full", full);
+					progress.setAttribute("data-fill", fill);
+					progress.setAttribute("width", ((fill/full) * 100) + "%");
+				}
+				return {
+					addFull : ()=>{
+						const full = (parseInt(progress.getAttribute("data-full"))) + 1;
+						const fill = (parseInt(progress.getAttribute("data-fill")));
+						_update(full, fill);
+					},
+					addFill : ()=>{
+						const full = (parseInt(progress.getAttribute("data-full")));
+						const fill = (parseInt(progress.getAttribute("data-fill"))) + 1;
+						_update(full, fill);
+					}
+				}
+			})();
+			
+			const testLevel = (lvl_id)=>{
+				return new Promise((resolve, reject)=> {
+					const repository = 'https://raw.githubusercontent.com/stluc-an/19-20_AN1_256x256x256/master/levels/[LVL_ID]/index.html';
+					var request = new XMLHttpRequest();  
+					request.open('GET', repository.replace("[LVL_ID]", lvl_id), true);
+					request.overrideMimeType("text/html");
+					request.onreadystatechange = function(){
+						if (request.readyState === 4){
+							if (request.status === 404) {  
+								document.querySelector("li[data_id='"+lvl_id+"']").classList.remove("loading");
+								document.querySelector("li[data_id='"+lvl_id+"']").classList.add("error");
+								progressBar.addFill();
+								return reject(lvl_id);//alert("Oh no, it does not exist!");
+							}  
+							if (request.status === 200) {  
+								document.querySelector("li[data_id='"+lvl_id+"']").classList.remove("loading");
+								document.querySelector("li[data_id='"+lvl_id+"']").classList.add("success");
+								progressBar.addFill();
+								return resolve(lvl_id);//alert("Oh yes, it does exist!");
+							}  
+						}
+					};
+					document.querySelector("li[data_id='"+lvl_id+"']").classList.add("loading");
+					request.send();
+				}).catch(error => { console.log(lvl_id + " : it does not exist!" ) });
+			}
+
+			const getAvailableLevel = () => {
+				return new Promise((resolve)=> {
+					const availableLevel = [];
+					const lvls = (new Array(256))
+								.fill(0)
+								.map((p, k)=>{
+									k = k.toString(16);
+									while(k.length<2) k = "0"+k;
+									k = k.toUpperCase();
+									k = "0x"+k;
+									const li = document.createElement("li");
+									li.setAttribute("data_id", k);
+									li.innerText=k;
+									document.querySelector("ul").append(li);
+									progressBar.addFull();
+									return k;
+								});
+					Promise.all(lvls.map(testLevel))
+					.then((data)=>{
+						for(const d of data){
+							if(d){
+								availableLevel.push(d);
+							}
+						}
+						resolve(availableLevel);
+					});
+				});
+			}
+			
+			getAvailableLevel()
+			.then(levels => {
+				const link = document.querySelector("#link");
+				link.setAttribute("href", link.getAttribute("href")+"?lvl="+JSON.stringify(levels))
+			});
+		</script>
+	</body>
 </html>
