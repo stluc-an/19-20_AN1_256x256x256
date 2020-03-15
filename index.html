@@ -66,8 +66,10 @@
 		<a id="link" href="/19-20_AN1_256x256x256/src/0xFFF/index.html" target="_blank">Run 256x256x256</a>
 
 		<script type="text/javascript">
-
-			var UID = {
+			const REPO_NAME = location.host.replace(".github.io", "") || "stluc-an";
+			const LVL_URL = 'https://raw.githubusercontent.com/'+REPO_NAME+'/19-20_AN1_256x256x256/master/levels/[LVL_ID]/index.html';
+					
+			const UID = {
 				_current: 0,
 				getNew: function(){
 					this._current++;
@@ -88,54 +90,97 @@
 				return this;
 			};
 
-
-			const progressBar = (() => {
-				const progressBar = document.querySelector("#progressBar");
-				const progress = progressBar.querySelector(".progress");
-				const _update = (full, fill) => {
-					progress.setAttribute("data-full", full);
-					progress.setAttribute("data-fill", fill);
-					progress.setAttribute("width", ((fill/full) * 100) + "%");
-				}
+			const UI = (()=>{
+				const _levelList = (()=> {
+					const lvls = {};
+					return {
+						setLoading : (name) => {
+							lvls[name].classList.add("loading");
+							lvls[name].pseudoStyle("before", "animation-delay", (Math.random()*0.5)+"s");
+						},
+						setSuccess : (name) => {
+							lvls[name].classList.remove("loading");
+							lvls[name].classList.add("success");
+						},
+						setError : (name) => {
+							lvls[name].classList.remove("loading");
+							lvls[name].classList.add("error");
+						},
+						add : (name)=>{
+							const li = document.createElement("li");
+							li.setAttribute("data_id", name);
+							const a = document.createElement("a");
+							a.setAttribute("target", "_blank");
+							a.setAttribute("href", "/19-20_AN1_256x256x256/src/0xFFF/index.html"+"?lvl="+JSON.stringify([name]));
+							a.innerText=name;
+							li.append(a);
+							document.querySelector("ul").append(li);
+							lvls[name] = li;
+						}
+					}
+				})();
+				const _progressBar = (() => {
+					const progressBar = document.querySelector("#progressBar");
+					const progress = progressBar.querySelector(".progress");
+					const _update = (full, fill) => {
+						progress.setAttribute("data-full", full);
+						progress.setAttribute("data-fill", fill);
+						progress.setAttribute("width", ((fill/full) * 100) + "%");
+					}
+					return {
+						addFull : ()=>{
+							const full = (parseInt(progress.getAttribute("data-full"))) + 1;
+							const fill = (parseInt(progress.getAttribute("data-fill")));
+							_update(full, fill);
+						},
+						addFill : ()=>{
+							const full = (parseInt(progress.getAttribute("data-full")));
+							const fill = (parseInt(progress.getAttribute("data-fill"))) + 1;
+							_update(full, fill);
+						}
+					}
+				})();
 				return {
-					addFull : ()=>{
-						const full = (parseInt(progress.getAttribute("data-full"))) + 1;
-						const fill = (parseInt(progress.getAttribute("data-fill")));
-						_update(full, fill);
+					setLoading : (name) => {
+						_levelList.setLoading(name);
+						_progressBar.addFull();
 					},
-					addFill : ()=>{
-						const full = (parseInt(progress.getAttribute("data-full")));
-						const fill = (parseInt(progress.getAttribute("data-fill"))) + 1;
-						_update(full, fill);
+					setSuccess : (name) => {
+						_levelList.setSuccess(name); 
+						_progressBar.addFill();
+					},
+					setError : (name) => {
+						_levelList.setError(name); 
+						_progressBar.addFill();
+					},
+					addLevel : (name)=>{
+						_levelList.add(name);
+					},
+					updateLink : (levels)=>{
+						const link = document.querySelector("#link");
+						link.setAttribute("href", link.getAttribute("href")+"?lvl="+JSON.stringify(levels))
 					}
 				}
 			})();
-			
+
 			const testLevel = (lvl_id)=>{
 				return new Promise((resolve, reject)=> {
-
-					const repository = 'https://raw.githubusercontent.com/'+location.host.replace(".github.io", "")+'/19-20_AN1_256x256x256/master/levels/[LVL_ID]/index.html';
 					var request = new XMLHttpRequest();  
-					request.open('GET', repository.replace("[LVL_ID]", lvl_id), true);
+					request.open('GET', LVL_URL.replace("[LVL_ID]", lvl_id), true);
 					request.overrideMimeType("text/html");
 					request.onreadystatechange = function(){
 						if (request.readyState === 4){
-							if (request.status === 404) {  
-								document.querySelector("li[data_id='"+lvl_id+"']").classList.remove("loading");
-								document.querySelector("li[data_id='"+lvl_id+"']").classList.add("error");
-								progressBar.addFill();
+							if (request.status === 404) { 
+								UI.setError(lvl_id); 
 								return reject(lvl_id);//alert("Oh no, it does not exist!");
 							}  
 							if (request.status === 200) {  
-								document.querySelector("li[data_id='"+lvl_id+"']").classList.remove("loading");
-								document.querySelector("li[data_id='"+lvl_id+"']").classList.add("success");
-								progressBar.addFill();
+								UI.setSuccess(lvl_id); 
 								return resolve(lvl_id);//alert("Oh yes, it does exist!");
 							}  
 						}
 					};
-					document.querySelector("li[data_id='"+lvl_id+"']").classList.add("loading");
-					document.querySelector("li[data_id='"+lvl_id+"']").pseudoStyle("before", "animation-delay", (Math.random()*0.5)+"s");
+					UI.setLoading(lvl_id);
 					request.send();
 				}).catch(error => { console.log(lvl_id + " : it does not exist!" ) });
 			}
@@ -146,24 +191,14 @@
 					const lvls = (new Array(256))
 								.fill(0)
 								.map((p, k)=>{
-									k = k.toString(16);
-									while(k.length<2) k = "0"+k;
-									k = k.toUpperCase();
-									k = "0x"+k;
-
-									const li = document.createElement("li");
-									li.setAttribute("data_id", k);
-									const a = document.createElement("a");
-									a.setAttribute("target", "_blank");
-									a.setAttribute("href", "/19-20_AN1_256x256x256/src/0xFFF/index.html"+"?lvl="+JSON.stringify([k]));
-									a.innerText=k;
-									li.append(a);
-									document.querySelector("ul").append(li);
-									
-									progressBar.addFull();
-									
-									return k;
+									let lvl_id = k.toString(16);
+									while(lvl_id.length<2) lvl_id = "0"+lvl_id;
+									lvl_id = lvl_id.toUpperCase();
+									lvl_id = "0x"+lvl_id;
+									UI.addLevel(lvl_id);
+									return lvl_id;
 								});
+
 					Promise.all(lvls.map(testLevel))
 					.then((data)=>{
 						for(const d of data){
@@ -176,11 +211,7 @@
 				});
 			}
 			
-			getAvailableLevel()
-			.then(levels => {
-				const link = document.querySelector("#link");
-				link.setAttribute("href", link.getAttribute("href")+"?lvl="+JSON.stringify(levels))
-			});
+			getAvailableLevel().then(UI.updateLink);
 		</script>
 	</body>
 </html>
