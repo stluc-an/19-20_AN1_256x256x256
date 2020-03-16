@@ -63,6 +63,7 @@
 				<rect class="progress" rx="3" ry="3" x="0" y="0" width="100%" height="100%" fill="#fff123" data-full="0" data-fill="0"/>
 			</svg>
 		</div>
+		
 		<a id="link" href="/19-20_AN1_256x256x256/src/0xFFF/index.html" target="_blank">Run 256x256x256</a>
 
 		<script type="text/javascript">
@@ -182,7 +183,9 @@
 					};
 					UI.setLoading(lvl_id);
 					request.send();
-				}).catch(error => { console.log(lvl_id + " : it does not exist!" ) });
+				}).catch(error => { 
+					console.log(lvl_id + " : it does not exist!" ) 
+				});
 			}
 
 			const getAvailableLevel = () => {
