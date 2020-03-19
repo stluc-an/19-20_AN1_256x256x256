@@ -25,8 +25,11 @@ body {
 } 
 
 #decor{
+	position: absolute;
+	top: 0%;
+	left: 0%;
 	width: 256px;
-	height: 256px; 
+	height: 256px;
 }
 
 #lettre{
