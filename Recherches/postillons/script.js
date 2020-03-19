@@ -2,12 +2,16 @@
   256^3 - script.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2020-02-06 23:31:08
-  @Last Modified time: 2020-03-19 23:12:44
+  @Last Modified time: 2020-03-19 23:22:59
 \*----------------------------------------*/
 
 let maxilaire;
 AppManager.ready(function(){
+	document.querySelector("input").focus();
 	InteractionHelper.onKeyDown(eventHandler);
+	InteractionHelper.onTap("body", ()=>{
+		document.querySelector("input").focus();
+	});
 	requestAnimationFrame(update);	
 });
 
