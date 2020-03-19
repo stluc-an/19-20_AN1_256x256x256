@@ -1,0 +1,29 @@
+/*
+* @Author: Evrard Vincent
+* @Date:   2020-02-06 23:32:06
+* @Last Modified by:   oogre
+* @Last Modified time: 2020-03-19 22:08:41
+*/
+
+html{
+	padding: 0; 
+	margin: 0;
+	overflow: hidden;
+	background: black;
+}
+body {
+	padding: 0; 
+	margin: 0;
+	background: white;
+	width : 256px;
+	height : 256px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+}
+
+.letter{
+	position: absolute;
+}
