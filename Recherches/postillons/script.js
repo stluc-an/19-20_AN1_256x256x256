@@ -2,14 +2,18 @@
   256^3 - script.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2020-02-06 23:31:08
-  @Last Modified time: 2020-03-19 22:46:54
+  @Last Modified time: 2020-03-19 23:12:44
 \*----------------------------------------*/
 
+let maxilaire;
 AppManager.ready(function(){
 	InteractionHelper.onKeyDown(eventHandler);
+	requestAnimationFrame(update);	
 });
 
 function eventHandler(event){
+	maxilaire = maxilaire || document.querySelector(".maxilaire");
+	maxilaire.style.transform = "translate(0, "+(-10 + Math.random() * 5)+"px)";
 	new Letter(event.key, event.mouseX, event.mouseY);
 }
 
@@ -22,18 +26,18 @@ class Letter{
 		this.element.innerText = key;
 		this.element.classList.add("letter");
 
-		this.x = x;
-		this.y = y;
+		this.x = 143;
+		this.y = 170;
 		this.z = 0;
 		this.r = 0;
 		
 		this.xspeed = (Math.random()-0.5) * 2 * 100;
 		this.yspeed = (Math.random()-0.5) * 2 * 50;
-		this.zspeed = (Math.random()-0.0) * 2 * 50;
+		this.zspeed = (Math.random()-0.0) * 2 * 5;
 		this.rspeed = (Math.random()-0.5) * 2 * 100;
 		
 		this.xAcc = 0;
-		this.yAcc = 4.81;
+		this.yAcc = 1.81;
 		this.rAcc = .9999;
 		
 		document.body.append(this.element);
@@ -49,7 +53,7 @@ class Letter{
 		this.yspeed += this.yAcc;
 		//this.rspeed *= this.rAcc;
 
-		this.element.style.fontSize = 20+this.z+"px";
+		this.element.style.fontSize = 5+this.z+"px";
 		this.element.style.transform = 	"translate("+(this.x-this.element.offsetWidth*0.5)+"px, "+this.y+"px)"+
 										"rotateZ("+(this.r)+"deg)";;;
 	}
@@ -61,6 +65,8 @@ class Letter{
 		letters.splice(i, 1);
 	}
 }
+
+
 
 function update(time){
 	const deltaTime = (time - lastTime)*0.001;
@@ -76,4 +82,4 @@ function update(time){
 	requestAnimationFrame(update);	
 }
 
-requestAnimationFrame(update);	
+

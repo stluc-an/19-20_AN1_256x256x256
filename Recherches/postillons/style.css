@@ -2,7 +2,7 @@
 * @Author: Evrard Vincent
 * @Date:   2020-02-06 23:32:06
 * @Last Modified by:   oogre
-* @Last Modified time: 2020-03-19 22:08:41
+* @Last Modified time: 2020-03-19 23:08:56
 */
 
 html{
@@ -21,9 +21,18 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	translate: -50% -50%;
+	transform : translate(-50%, -50%);
 }
 
 .letter{
 	position: absolute;
+	color:white;
+}
+
+img{
+	position: absolute;
+}
+
+.maxilaire{
+	transform : translate(0, -10px);
 }
