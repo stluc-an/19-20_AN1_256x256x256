@@ -14,7 +14,7 @@ function eventHandler(event){
 	document.querySelector("#monImage1").classList.add("hide");
 	document.querySelector("#monImage2").classList.remove("hide");
 	InteractionHelper.onMouseLeave("#monImage2", eventHandler2);
-	AppManager.levelComplete();
+	
 }
 function eventHandler2(event){
 	document.querySelector("#monImage2").classList.add("hide");
