@@ -13,7 +13,7 @@ function buttonPressed(event){
 	console.log(event);
     event.target.classList.add("hide");
     setTimeout(showMouseEnter,500);
-    InteractionHelper.onMouseEnter(mouseEnter);
+    InteractionHelper.onMouseEnter(".mouseenter", mouseEnter);
 
 }
 
