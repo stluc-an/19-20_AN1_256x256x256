@@ -22,7 +22,7 @@ function actionWhenShowed(event){
 }
 
 function done(event){
-
+	AppManager.levelComplete();
 	console.log(4);
 }
 
