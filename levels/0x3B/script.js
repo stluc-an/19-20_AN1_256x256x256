@@ -18,14 +18,14 @@ function eventHandler(event){
     document.querySelector("#Sceau").style.left = event.mouseX+"px";
     document.querySelector("#Sceau").style.top = event.mouseY+"px";
     
+    document.querySelector("#Batiment").classList.add("hide");
+    document.querySelector("#Sceau").classList.add("hide");
+    document.querySelector("#Hand").classList.remove("hide");
+    document.querySelector("#cube").classList.remove("hide");
+    
     InteractionHelper.onWindowResize( eventHandler2);
 }
 
 function eventHandler2(event){
-	
-    document.querySelector("#Batiment").classList.add("hide");
-    document.querySelector("#Sceau").classList.add("hide");
-    document.querySelector("#Hand").classList.remove("hide");
-    
-	AppManager.levelComplete();
+    AppManager.levelComplete();
 }

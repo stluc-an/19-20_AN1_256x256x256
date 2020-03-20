@@ -45,6 +45,12 @@ body {
     z-index: 1;
 }
 
+#cube {
+    position: absolute;
+    top: 8%;
+    left: 34%;
+}
+
 .hide {
     display: none;
 }
