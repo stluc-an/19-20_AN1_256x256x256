@@ -23,5 +23,10 @@ function action_hide(event){
     document.querySelector("#Heart2").classList.add("hide");
     document.querySelector("#Heart3").classList.remove("hide");
     
+    setTimeout (pause, 2000);
+}
+
+function pause(){
     AppManager.levelComplete();
+        
 }
