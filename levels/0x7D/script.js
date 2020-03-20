@@ -23,7 +23,7 @@ function toucheR(event){
 function scroll(event){
 //	console.log(event);
 
-
+	console.log(document.body.scrollTop);
 	if(document.body.scrollTop>470){
 		AppManager.levelComplete();
 	}
