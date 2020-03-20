@@ -49,5 +49,9 @@ function second(event){
     icone8.classList.remove("block");
     icone8.classList.add("hide");
 
-    AppManager.levelComplete(); 
+    setTimeout(theEnd, 2000)
+}
+
+function theEnd() {
+    AppManager.levelComplete();
 }

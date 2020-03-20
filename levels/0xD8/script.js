@@ -38,6 +38,10 @@ function second(event){
         let icone10 = document.getElementById("File_Directory01");
         icone10.classList.add("hide");
     
-	    AppManager.levelComplete();
+        setTimeout(theEnd, 2000)
     }
+}
+
+function theEnd() {
+    AppManager.levelComplete();
 }

@@ -20,8 +20,12 @@ function second(event){
     
     if(event.keyCode == "13") {
         console.log(event);
-	    AppManager.levelComplete();
         var audio = new Audio('../Image/Duck_Sound.mp3');
         audio.play();
+        setTimeout(theEnd, 2000)
     }
+}
+
+function theEnd() {
+    AppManager.levelComplete();
 }

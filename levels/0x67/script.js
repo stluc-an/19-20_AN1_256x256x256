@@ -24,6 +24,9 @@ function second(event){
         icone.classList.add("hide"); 
         
         console.log(event);
-	    AppManager.levelComplete();
-    }
+    setTimeout(theEnd, 2000)
+}
+
+function theEnd() {
+    AppManager.levelComplete();
 }

@@ -27,8 +27,12 @@ function first(event){
 
 function second(event){ 
     
-    if (document.querySelector(".card-body.bg-white").scrollTop > 165) {
+    if (document.querySelector(".card-body.bg-white").scrollTop > 130) {
         
-        AppManager.levelComplete();
+        setTimeout(theEnd, 2000)
     }
+}
+
+function theEnd() {
+    AppManager.levelComplete();
 }

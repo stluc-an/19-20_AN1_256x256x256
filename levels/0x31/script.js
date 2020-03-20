@@ -31,14 +31,6 @@ function first(event){
             
             let icone3 = document.getElementById("img04");
             icone3.classList.add("block");
-            
-            
-            
-            
-            
-            
-            
-            
 
             document.getElementById("Pond03").style.cursor = "pointer";
             
@@ -46,8 +38,8 @@ function first(event){
         }
         else {
             let Duck = document.querySelector("#Duck");
-            Duck.style.top = event.mouseY + "px";
-            Duck.style.left = event.mouseX + "px";
+            Duck.style.top = event.mouseY - (Duck.offsetHeight/2) + "px";
+            Duck.style.left = event.mouseX - (Duck.offsetHeight/2) + "px";
         }
     }
 }
@@ -75,5 +67,9 @@ function second(event){
     let icone8 = document.getElementById("img07");
     icone8.classList.add("block");
     
-	AppManager.levelComplete();
+    setTimeout(theEnd, 2000)
+}
+
+function theEnd() {
+    AppManager.levelComplete();
 }
