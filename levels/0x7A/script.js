@@ -20,8 +20,13 @@ function actionWhenKeyT(event){
 
 function action_hide(event){
     document.querySelector("#Devil").classList.add("hide");
-    document.querySelector("#Princess").classList.remove("hide")
-    {
-        AppManager.levelComplete();
-    }
+    document.querySelector("#Slash").classList.remove("hide");
+    document.querySelector("#Princess").classList.remove("hide");
+    
+    setTimeout (pause, 2000);
+}
+
+function pause(){
+    AppManager.levelComplete();
+        
 }
