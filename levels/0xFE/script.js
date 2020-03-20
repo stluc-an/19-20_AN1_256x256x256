@@ -14,13 +14,11 @@ function eventHandler(event){
 	if(event.intensity>20){
         document.querySelector("#Sleep2").classList.remove("hide");
         
-    InteractionHelper.onTimeout("#Sleep2", wait);
+    setTimeout( theEnd , 2000);
         
     }
 }
 
-function wait(event){
-    console.log(event);
-    setTimeout(AppManager.levelComplete(), 2000);
-    
+function theEnd(){
+    AppManager.levelComplete();
 }
