@@ -6,17 +6,16 @@
 \*----------------------------------------*/
 
 AppManager.ready(function(){
-	InteractionHelper.onTap(".Wall", buttonPressed);
+	InteractionHelper.onMouseEnter("#Wall", buttonPressed);
 });
 
 function buttonPressed(event){
 	console.log(event);
-    event.target.classList.add("hide");
-    InteractionHelper.onWindowResize(windowResize);
+    AppManager.levelComplete();
+    setTimeout (pause, 2000);
+    
 }
 
-function windowResize(event){
-    console.log(event);
-    
+function pause(){
     AppManager.levelComplete();
 }
