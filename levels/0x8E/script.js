@@ -15,5 +15,10 @@ function actionWhenKeyDormeur(event){
         document.querySelector("#Dormeur2").classList.remove("hide");
     }
     
+    setTimeout (pause, 4000);
+}
+
+function pause(){
     AppManager.levelComplete();
+        
 }
