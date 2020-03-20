@@ -33,8 +33,22 @@ body {
 	left: 0%;
 }
 
-#monImage2 {
-	position: absolute;
-	top: 0%;
-	left: 0%;
+.imgWrapper{
+	overflow: hidden;
+	height: 33%;
+}
+
+.imgWrapper img:not(.microsoft):not(.apple):not(.linux){
+	transform: translate(0,100%);
+}
+
+.imgWrapper img.microsoft{
+	transform: translate(0,0);
+}
+
+.imgWrapper img.apple{
+	transform: translate(0,0);
+}
+.imgWrapper img.linux{
+	transform: translate(0,0);
 }

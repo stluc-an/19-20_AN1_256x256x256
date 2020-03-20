@@ -18,6 +18,5 @@ function eventHandler(event){
 }
 function eventHandler2(event){
 	document.querySelector("#monImage2").classList.add("hide");
-	}
+	AppManager.levelComplete();}
 
-AppManager.levelComplete();

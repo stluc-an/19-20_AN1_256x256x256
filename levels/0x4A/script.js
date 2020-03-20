@@ -7,6 +7,7 @@
 
 AppManager.ready(function(){
 	InteractionHelper.onDropFile("#monImage1", eventHandler);
+	setButtonOS(getOSname());
 });
 
 
@@ -19,8 +20,32 @@ function eventHandler(event){
 	InteractionHelper.onShow(eventHandler2);
 	
 }
-function eventHandler2(event){
-	document.querySelector("#monImage2").classList.add("hide");
+function setButtonOS(OS){
+	let allValues=["microsoft,"apple","linux"];
+	let controlBtns=  document.querySelector(".imgWrapper img");
+	for(let value of allValues){
+		controlBtns.classlist.remove(value);
 	}
+	controlBtns.classlist.add(OS)
 
-AppManager.levelComplete();
+function getOSname(){
+	let OSName="microsoft";
+	if(navigator.appVersion.indexOf("Mac")!=-1){
+		OSName="apple";
+	}
+	if (navigator.appVersion.indexOf("X11")!=-1) {
+		OSName="apple";
+	}
+	if (navigator.appVersion.indexOf("Linux")!=-1) {
+		OSName="linux";
+	}
+	return OSName;
+}	
+}function eventHandler2(event){
+	document.querySelector("#monImage2").classList.add("hide");
+	AppManager.levelComplete();}
+
+
+
+
+
