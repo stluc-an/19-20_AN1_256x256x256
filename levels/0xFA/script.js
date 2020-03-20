@@ -26,4 +26,6 @@ function action_hide(event){
 
 function pause(){
     AppManager.levelComplete();
+        var audio = new Audio("2.mp3");
+        audio.play();
 }
