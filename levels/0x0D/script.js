@@ -15,12 +15,12 @@ function eventHandlerAscenseur(event){
     document.querySelector("#ascenseur2").classList.remove("hide");
     document.querySelector("#Jean_Michel").classList.remove("hide");
     
-    InteractionHelper.onScroll("#Jean_Michel", eventHandler);    
+    InteractionHelper.onScroll("#Jean_Michel", eventHandlerAlien);    
 }
 
-function scroll(eventHandlerAscenseur){
-    console.log(document.body.scrollTop);
-    if(document.body.scrollTop>470){
+function eventHandlerAlien(event){
+    console.log(document.querySelector("#Jean_Michel").scrollTop);
+    if(document.querySelector("#Jean_Michel").scrollTop > 470) {
         AppManager.levelComplete();
         
     }
