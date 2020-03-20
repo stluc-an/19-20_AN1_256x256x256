@@ -13,7 +13,7 @@ function buttonPressed(event){
 	console.log(event);
     event.target.classList.add("hide");
     setTimeout(showlongtap,700)
-    InteractionHelper.onLongtap(longtap);
+    InteractionHelper.onLongTap(longtap);
 
 }
 
