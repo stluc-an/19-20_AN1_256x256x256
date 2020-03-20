@@ -1,0 +1,92 @@
+/*
+* @Author: Evrard Vincent
+* @Date:   2020-02-06 23:32:06
+* @Last Modified by:   ogre
+* @Last Modified time: 2020-02-06 23:35:41
+*/
+
+html{
+	padding: 0; 
+	margin: 0;
+	overflow: hidden;
+	background: black;
+}
+body {
+	padding: 0; 
+	margin: 0;
+	background: #00FF00;
+	width : 256px;
+	height : 256px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+}
+.bigredbutton{
+    width: 150px;
+    height: 150px;
+    background-color: #00FF7F;
+    border-radius: 50%;
+    top: 50px;
+    position: absolute;
+    left: 50px;
+}
+.hide{
+display:none;
+}
+.bigredbutton:hover{
+	box-shadow: 5px 5px 20px red;
+}
+#arrow{
+    display: none;
+    opacity: 0%;
+	width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 77px;
+    left: 198px;
+    transform: rotate(90deg);
+}
+
+.axe{
+	width: 10%;
+    height: 90%;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 45%;
+    z-index: 2;
+}
+
+.needle{
+	width: 50%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+}
+
+.mask{
+	background: #00FF00;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+.shape{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.sub-shape{
+	background-color: black;
+    transform: rotateZ(45deg);
+    width: 70%;
+    height: 70%;
+    margin-top: 7px;
+    margin-left: 7px;
+}
