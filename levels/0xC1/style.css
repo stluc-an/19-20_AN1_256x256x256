@@ -23,3 +23,28 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 } 
+
+#print {
+	width: 256px;
+	height: 256px;
+}
+
+#yeah{
+	position: absolute;
+	top: 0%;
+    left: 0%;
+	width: 256px;
+	height: 256px;
+}
+
+.hand{
+	width: 60px;
+    height: 110px;
+    top: 77px;
+    right: 0px;
+    position: absolute;
+}
+
+.hide{
+	display: none;
+}

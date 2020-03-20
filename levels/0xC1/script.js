@@ -6,10 +6,21 @@
 \*----------------------------------------*/
 
 AppManager.ready(function(){
-	InteractionHelper.onBeforePrint( eventHandler);
+	InteractionHelper.onBeforePrint( print);
+	document.querySelector(".hand").classList.add("hide");
+	document.querySelector("#yeah").classList.add("hide");
 });
 
-function eventHandler(event){
+function print(event){
+	console.log(event);
+	//AppManager.levelComplete();
+	document.querySelector(".hand").classList.remove("hide");
+	document.querySelector("#yeah").classList.remove("hide");
+
+	InteractionHelper.onDoubleTap(".hand", click);
+}
+
+function click(event){
 	console.log(event);
 	AppManager.levelComplete();
 }
