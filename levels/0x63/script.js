@@ -30,6 +30,7 @@ function whenDragSquare(event){
 			piece.style.top = 0 + "px";
 			piece.style.left = 0 + "px";
 			isPieceInPlace = true;	
+			AppManager.levelComplete();
 		}
 		else {
 
