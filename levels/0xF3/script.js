@@ -13,6 +13,8 @@ function eventHandler(event){
     console.log(event);
 	if(event.intensity>20){
         document.querySelector("#Magazine").classList.remove("hide");
+            var audio = new Audio("2.mp3");
+            audio.play();
     }
     InteractionHelper.onDrag("#Magazine", actionWhenDragMagazine)
 }
