@@ -1,5 +1,5 @@
 AppManager.ready(function(){
-	InteractionHelper.onLongTap("monImage1",actionWhenLongTap);
+	InteractionHelper.onLongTap("#monImage1",actionWhenLongTap);
 });
 
 function actionWhenLongTap(event){
@@ -12,5 +12,7 @@ function actionWhenLongTap(event){
 
 function actionWhenKeyDown(event){
 	console.log(event);
+    if(event.key == 's');{
 	AppManager.levelComplete();
+    }
 }
