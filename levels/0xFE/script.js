@@ -6,7 +6,7 @@
 \*----------------------------------------*/
 
 AppManager.ready(function(){
-	InteractionHelper.onSound( eventHandler);
+	InteractionHelper.onSound(eventHandler);
 });
 
 function eventHandler(event){
@@ -19,8 +19,8 @@ function eventHandler(event){
     }
 }
 
-function wait(eventHandler){
-    console.log(eventHandler);
+function wait(event){
+    console.log(event);
     setTimeout(AppManager.levelComplete(), 2000);
     
 }
