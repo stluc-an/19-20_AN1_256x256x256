@@ -1,0 +1,78 @@
+/*
+* @Author: Evrard Vincent
+* @Date:   2020-02-06 23:32:06
+* @Last Modified by:   ogre
+* @Last Modified time: 2020-02-06 23:35:41
+*/
+
+html{
+	padding: 0; 
+	margin: 0;
+	overflow: hidden;
+	background: black;
+}
+body {
+	padding: 0; 
+	margin: 0;
+	background: white;
+	width : 256px;
+	height : 256px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+} 
+
+#pot{
+
+	height: 160px;
+	width: 160px;
+	position: absolute;
+	left: 1px;
+    top: 112px;
+}
+
+#arrosoir{
+
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	left: 1px;
+    top: 132px;
+    opacity: 0.5;
+}
+
+.show{
+	opacity: 1;
+	transition: 2s;
+}
+
+.anima{
+	position: absolute;
+	height: 130px;
+	width: 130px;
+	left: 9px;
+    top: 25px;
+	
+	
+}
+
+.hide{
+	display: none;
+}
+
+.anima2{
+	position: absolute;
+	height: 130px;
+	width: 130px;
+	left: 97px;
+    top: 20px;
+}
+.anima3{
+	position: absolute;
+	height: 130px;
+	width: 130px;
+	left: 12px;
+    top: 66px;
+}

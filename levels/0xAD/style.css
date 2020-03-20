@@ -1,0 +1,66 @@
+/*
+* @Author: Evrard Vincent
+* @Date:   2020-02-06 23:32:06
+* @Last Modified by:   ogre
+* @Last Modified time: 2020-02-06 23:35:41
+*/
+
+html{
+	padding: 0; 
+	margin: 0;
+	overflow: hidden;
+	background: black;
+}
+body {
+	padding: 0; 
+	margin: 0;
+	background: black;
+	width : 256px;
+	height : 256px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+
+} 
+
+.scrollBar{
+	overflow-y: scroll;
+}
+::-webkit-scrollbar {
+     width: 15px;
+     height: 15px;
+ }
+ ::-webkit-scrollbar-button {
+     width: 5px;
+     height: 5px;
+ }
+ ::-webkit-scrollbar-thumb {
+     background: black;
+     border: 31px none #ffffff;
+     border-radius: 5px;
+ }
+
+ ::-webkit-scrollbar-track {
+     background: #f0f0f0;
+     border: 1px solid #ffffff;
+     border-radius: 10px;
+ }
+
+ ::-webkit-scrollbar-corner {
+     background: transparent;
+ }
+
+
+.gif{
+	height: 256px;
+}
+
+.scroll{
+	width: 256px;
+}
+
+.hide{
+	display: none;
+}
