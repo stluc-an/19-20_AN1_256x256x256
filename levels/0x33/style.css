@@ -1,0 +1,52 @@
+html{
+	padding: 0; 
+	margin: 0;
+	overflow: hidden;
+	background: black;
+}
+body {
+	padding: 0; 
+	margin: 0;
+	background: white;
+	width : 256px;
+	height : 256px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#monImage1{
+    width: 64px;
+    height: 64px;;
+    position: absolute;
+}
+
+#monImage2{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 128px;
+    left: 128px;
+    z-index: -1;
+}
+
+#monImage3{
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: 128px;
+    left: 128px;
+}
+
+#monImage4{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    z-index: -1;
+}
+
+.hide{
+    display: none;
+}
