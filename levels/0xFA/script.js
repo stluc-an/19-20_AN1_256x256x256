@@ -19,9 +19,9 @@ function eventHandler(event){
 
 function action_hide(event){
     document.querySelector("#Police").classList.add("hide");
-    document.querySelector("#Thug").classList.remove("hide");
-        var audio = new Audio("2.mp3");
+    var audio = new Audio("2.mp3");
         audio.play();
+    document.querySelector("#Thug").classList.remove("hide");
     
     setTimeout (pause, 2000);
 }
