@@ -22,7 +22,7 @@ function second(event){
         console.log(event);
         var audio = new Audio('../Image/Duck_Sound.mp3');
         audio.play();
-        setTimeout(theEnd, 2000)
+        setTimeout(theEnd, 2000);
     }
 }
 

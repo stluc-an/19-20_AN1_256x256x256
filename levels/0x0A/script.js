@@ -49,7 +49,7 @@ function second(event){
     icone8.classList.remove("block");
     icone8.classList.add("hide");
 
-    setTimeout(theEnd, 2000)
+    setTimeout(theEnd, 2000);
 }
 
 function theEnd() {

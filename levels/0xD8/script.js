@@ -38,7 +38,7 @@ function second(event){
         let icone10 = document.getElementById("File_Directory01");
         icone10.classList.add("hide");
     
-        setTimeout(theEnd, 2000)
+        setTimeout(theEnd, 2000);
     }
 }
 

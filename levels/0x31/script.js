@@ -67,7 +67,7 @@ function second(event){
     let icone8 = document.getElementById("img07");
     icone8.classList.add("block");
     
-    setTimeout(theEnd, 2000)
+    setTimeout(theEnd, 2000);
 }
 
 function theEnd() {

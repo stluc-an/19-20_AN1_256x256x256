@@ -29,7 +29,7 @@ function second(event){
     
     if (document.querySelector(".card-body.bg-white").scrollTop > 130) {
         
-        setTimeout(theEnd, 2000)
+        setTimeout(theEnd, 2000);
     }
 }
 

@@ -34,7 +34,7 @@ function first(event){
 
 function second(event){
     console.log(event);
-    setTimeout(theEnd, 2000)
+    setTimeout(theEnd, 2000);
 }
 
 function theEnd() {
