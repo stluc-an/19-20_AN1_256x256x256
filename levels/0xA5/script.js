@@ -11,8 +11,8 @@ AppManager.ready(function(){
 
 function show(event){
 	console.log(event);
-    InteractionHelper.onMouseEnter(".rvb", mouseEnter);
-    document.querySelector(".rvb").classList.remove("hide");
+    InteractionHelper.onMouseEnter(".target", mouseEnter);
+    document.querySelector(".target").classList.remove("hide");
     
 }
 
