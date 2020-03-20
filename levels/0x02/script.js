@@ -13,25 +13,32 @@ function buttonPressed(event){
 	console.log(event);
     event.target.classList.add("hide");
     setTimeout(showlongtap,700)
-    InteractionHelper.onLongTap(longtap);
+    
 
 }
 
 function showlongtap(){
     document.querySelector(".tappedme").classList.add("hide");
     document.querySelector(".longtap").classList.remove("hide");
-
+    InteractionHelper.onLongTap(".longtap", longtap);
+    
+    document.querySelector(".longtap").addEventListener("mousedown", fill, false);
+    
 }
 
 function longtap(event){
     console.log(event);
     setTimeout(showlongtapped, 500);
-    AppManager.levelComplete();
+
 }
 
 function showlongtapped(){
      document.querySelector(".longtap").classList.add("hide");
     document.querySelector(".longtapped").classList.remove("hide");
-    
+    AppManager.levelComplete();
+}
+
+function fill(){
+ document.querySelector(".liquid").classList.add("full");
 }
 
