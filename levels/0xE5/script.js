@@ -6,16 +6,12 @@
 \*----------------------------------------*/
 
 AppManager.ready(function(){
-	InteractionHelper.onMouseEnter("#Wall", buttonPressed);
+	InteractionHelper.onMouseEnter("#hand", buttonPressed);
 });
 
 function buttonPressed(event){
 	console.log(event);
-    AppManager.levelComplete();
-    setTimeout (pause, 2000);
     
+    AppManager.levelComplete();
 }
 
-function pause(){
-    AppManager.levelComplete();
-}
