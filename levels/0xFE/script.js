@@ -14,11 +14,11 @@ function eventHandler(event){
 	if(event.intensity>20){
         document.querySelector("#Sleep2").classList.remove("hide");
         
-    setTimeout( theEnd , 2000);
+    setTimeout (pause, 2000);
         
     }
 }
 
-function theEnd(){
+function pause(){
     AppManager.levelComplete();
 }
