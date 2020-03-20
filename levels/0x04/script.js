@@ -7,12 +7,15 @@
 
 AppManager.ready(function(){
 	InteractionHelper.onTap(".button", buttonPressed);
+	document.querySelector(".hand").classList.add("hide");
 });
 
 function buttonPressed(event){
 	//console.log(event);
 	document.querySelector("#vitre").classList.add("hide");
 	document.querySelector("#papiers").classList.remove("hide");
+	document.querySelector(".hand").classList.remove("hide");
+	document.querySelector(".button").classList.add("hide");
 
 	InteractionHelper.onDropFile(".hand", dropFile);
 	

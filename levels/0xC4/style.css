@@ -23,3 +23,25 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 } 
+
+#print {
+	width: 256px;
+	height: 256px;
+}
+
+.zone{
+	width: 110px;
+    height: 60px;
+    top: 77px;
+    left: 70px;
+    position: absolute;
+}
+
+#feuille{
+	width: 256px;
+	height: 256px;
+}
+
+.hide{
+	display: none;
+}

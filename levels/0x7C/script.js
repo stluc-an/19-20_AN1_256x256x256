@@ -21,5 +21,5 @@ function toucheCtrl(event){
 function print(event){
 	console.log(event);
 	document.querySelector("#rire").classList.remove("hide");
-	setTimeout( AppManager.levelComplete , 5000);
+	setTimeout( AppManager.levelComplete , 3000);
 }
