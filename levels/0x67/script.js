@@ -24,7 +24,8 @@ function second(event){
         icone.classList.add("hide"); 
         
         console.log(event);
-    setTimeout(theEnd, 2000)
+        setTimeout(theEnd, 2000)
+    }
 }
 
 function theEnd() {
