@@ -21,5 +21,9 @@ function action_hide(event){
     document.querySelector("#Police").classList.add("hide");
     document.querySelector("#Thug").classList.remove("hide");
     
+    setTimeout (pause, 2000);
+}
+
+function pause(){
     AppManager.levelComplete();
 }
