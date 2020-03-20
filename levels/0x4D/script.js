@@ -27,7 +27,7 @@ function first(event){
 
 function second(event){ 
     
-    if (document.querySelector(".card-body.bg-white").scrollTop > 100) {
+    if (document.querySelector(".card-body.bg-white").scrollTop > 1) {
         
         setTimeout(theEnd, 2000);
     }
