@@ -10,7 +10,7 @@ AppManager.ready(function(){
 });
 
 function first(event){
-    if (document.querySelector(".card-body.bg-white").scrollTop > 40) {
+    if (document.querySelector(".card-body.bg-white").scrollTop > 1) {
         InteractionHelper.onKeyDown(second);
     }
 }
