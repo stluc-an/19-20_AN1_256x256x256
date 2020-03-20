@@ -19,8 +19,6 @@ function eventHandler(event){
 
 function action_hide(event){
     document.querySelector("#Police").classList.add("hide");
-    var audio = new Audio("2.mp3");
-        audio.play();
     document.querySelector("#Thug").classList.remove("hide");
     
     setTimeout (pause, 2000);
@@ -28,5 +26,7 @@ function action_hide(event){
 
 function pause(){
     AppManager.levelComplete();
+    var audio = new Audio("2.mp3");
+        audio.play();
         
 }
