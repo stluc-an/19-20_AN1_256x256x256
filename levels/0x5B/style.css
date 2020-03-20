@@ -1,0 +1,56 @@
+/*
+* @Author: Evrard Vincent
+* @Date:   2020-02-06 23:32:06
+* @Last Modified by:   ogre
+* @Last Modified time: 2020-02-06 23:35:41
+*/
+
+html{
+	padding: 0; 
+	margin: 0;
+	overflow: hidden;
+	background: black;
+}
+body {
+	padding: 0; 
+	margin: 0;
+	background: white;
+	width : 256px;
+	height : 256px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+} 
+
+#resize {
+    
+}
+
+.button
+{
+    width : 110px;
+	height : 110px;
+    background-color: red;
+    position: absolute;
+    top: 150px;
+}
+
+.hide{
+    display: none;
+}
+
+.grand {
+    padding-left: 3px;
+    padding-top: 3px;
+    width : 250px;
+    height: 250px;
+}
+
+.petit {
+    padding-left: 28px;
+    padding-top: 28px;
+    width : 200px;
+	height : 200px;
+}
