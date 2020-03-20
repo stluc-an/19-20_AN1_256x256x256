@@ -25,5 +25,10 @@ function action_hide(event){
     document.querySelector("#Jesus").classList.add("hide");
     document.querySelector("#King").classList.remove("hide");
     
+    setTimeout (pause, 1200);
+    
+}
+
+function pause(){
     AppManager.levelComplete();
 }
