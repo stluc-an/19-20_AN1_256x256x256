@@ -20,7 +20,8 @@ function eventHandlerAscenseur(event){
 
 function eventHandlerAlien(event){
     console.log(document.querySelector("#Jean_Michel").scrollTop);
-    if(document.querySelector("#Jean_Michel").scrollTop > 160) {
+    if (document.querySelector("#Jean_Michel").scrollTop > 160) {
+        
         AppManager.levelComplete();
         
     }

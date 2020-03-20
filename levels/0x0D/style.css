@@ -45,7 +45,8 @@ body {
 
 ::-webkit-scrollbar {
     width: 0px;
-    background-color: black;
+    height: 0px;
+    background-color: white;
 }
 
 .hide {
