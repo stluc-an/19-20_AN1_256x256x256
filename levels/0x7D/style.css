@@ -12,7 +12,7 @@ html{
 	background: black;
 }
 body {
-	border
+	border: none;
 	padding: 0; 
 	margin: 0;
 	background-color: #000033;
@@ -52,7 +52,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-	overflow: hidden;
+	border-bottom: hidden;
 	width: 0px;
+	height: 0px;
 	background-color: #000033;
 }
