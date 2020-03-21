@@ -52,7 +52,6 @@ body {
 }
 
 ::-webkit-scrollbar {
-	border-bottom: hidden;
 	width: 0px;
 	height: 0px;
 	background-color: #000033;
