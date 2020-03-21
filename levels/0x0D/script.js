@@ -21,9 +21,14 @@ function eventHandlerAscenseur(event){
 function myFunction() {
   if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
     document.getElementById("myImg").className = "slideUp";
-  }
-        { AppManager.levelComplete(); 
-    
     }
     
+    setTimeout (pause, 3000);
 }
+
+function pause(){
+    AppManager.levelComplete();
+}
+
+    
+    
