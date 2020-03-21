@@ -2,7 +2,7 @@
 * @Author: Evrard Vincent
 * @Date:   2020-02-06 23:32:06
 * @Last Modified by:   oogre
-* @Last Modified time: 2020-03-21 03:56:54
+* @Last Modified time: 2020-03-21 04:28:37
 */
 
 html{
@@ -45,15 +45,11 @@ body {
 	width: 64px;
 	height: 16px;
 	background: black;
-	top: 52538px;
 	left: 2px;
 }
 .ball{
 	position: absolute;
-	/*top: 52522px;
-	/left: 0px;*/
 	background-color: red;
-	top: 52439px;
 	left: 120px;
 	font-family: monospace;
 	font-size: 26.6px;

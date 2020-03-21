@@ -2,12 +2,13 @@
   19-20_AN1_256x256x256 - player.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2020-03-21 02:10:41
-  @Last Modified time: 2020-03-21 02:10:58
+  @Last Modified time: 2020-03-21 04:29:54
 \*----------------------------------------*/
 
 class Player{
 	constructor(){
 		this.element = document.querySelector(".player");
+		this.element.style.top = (document.querySelector(".container").offsetHeight - 18) + "px"
 		this.area = {
 			x1 : this.element.offsetLeft,
 			y1 : this.element.offsetTop,

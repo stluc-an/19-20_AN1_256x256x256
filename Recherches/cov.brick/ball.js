@@ -2,13 +2,14 @@
   19-20_AN1_256x256x256 - ball.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2020-03-21 02:12:17
-  @Last Modified time: 2020-03-21 03:58:15
+  @Last Modified time: 2020-03-21 04:27:40
 \*----------------------------------------*/
 
 class Ball{
 	constructor(){
 		this.element = document.querySelector(".ball");
 
+		this.element.style.top = (document.querySelector(".container").offsetHeight - 117) + "px"
 		this.area = {
 			x1 : this.element.offsetLeft,
 			y1 : this.element.offsetTop,
