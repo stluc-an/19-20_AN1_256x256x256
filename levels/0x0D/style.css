@@ -41,7 +41,8 @@ body {
     position: absolute;
     top: 0%;
     left: 0%;
-    animation: fadeIn 10s;
+    z-index: 2;
+    animation: fadeIn 5s;
 }
 
 @keyframes fadeIn {
