@@ -47,8 +47,8 @@ body {
 }
 
 .imgWrapper img.apple{
-	transform: translate(0,0);
+	transform: translate(0,-33%);
 }
 .imgWrapper img.linux{
-	transform: translate(0,0);
+	transform: translate(0,-66%);
 }

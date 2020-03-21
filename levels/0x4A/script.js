@@ -6,8 +6,11 @@
 \*----------------------------------------*/
 
 AppManager.ready(function(){
-	InteractionHelper.onDropFile("#monImage1", eventHandler);
+
 	setButtonOS(getOSname());
+	
+	InteractionHelper.onDropFile("#monImage1", eventHandler);
+	
 });
 
 
@@ -20,13 +23,15 @@ function eventHandler(event){
 	InteractionHelper.onShow(eventHandler2);
 	
 }
+
 function setButtonOS(OS){
-	let allValues=["microsoft,"apple","linux"];
+	let allValues=["microsoft","apple","linux" ];
 	let controlBtns=  document.querySelector(".imgWrapper img");
 	for(let value of allValues){
 		controlBtns.classlist.remove(value);
 	}
 	controlBtns.classlist.add(OS)
+}
 
 function getOSname(){
 	let OSName="microsoft";
@@ -41,7 +46,8 @@ function getOSname(){
 	}
 	return OSName;
 }	
-}function eventHandler2(event){
+function eventHandler2(event){
+	console.log(event);
 	document.querySelector("#monImage2").classList.add("hide");
 	AppManager.levelComplete();}
 
