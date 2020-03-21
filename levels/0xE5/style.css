@@ -25,18 +25,40 @@ body {
 	transform: translate(-50%, -50%);
 } 
 
-.chien {
+#chien {
     position: absolute;
-    top: 50%;
+    top: 0%;
     left: 0%;   
 }
 
-.hand {
+#balle {
     position: absolute;
-    top: 10%;
-    left: 0%;
+    top: 35%;
+    left: 80%;
+    height: 50px;
+    width: 50px;
+    z-index: 2;
+    animation: fadeIn 10s;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+#flash {
+    position: absolute;
+    top: -10%;
+    left: -5%;
+}
+
+.hide {
+    display: none;
+}
 
 
 

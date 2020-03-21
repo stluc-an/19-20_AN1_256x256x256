@@ -6,12 +6,22 @@
 \*----------------------------------------*/
 
 AppManager.ready(function(){
-	InteractionHelper.onMouseEnter("#hand", buttonPressed);
+	InteractionHelper.onMouseEnter("#balle", buttonPressed);
 });
 
 function buttonPressed(event){
 	console.log(event);
     
+    document.querySelector("#balle").classList.add("hide");
+    document.querySelector("#chien").classList.add("hide");
+    document.querySelector("#flash").classList.remove("hide");
+    
+    setTimeout (pause, 3000);
+    
+}
+
+function pause(){
     AppManager.levelComplete();
 }
+
 

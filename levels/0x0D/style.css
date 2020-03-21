@@ -41,8 +41,6 @@ body {
     position: absolute;
     top: 0%;
     left: 0%;
-    height: 1700px;
-    width: 255px;
     animation: fadeIn 10s;
 }
 
