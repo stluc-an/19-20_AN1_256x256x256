@@ -1,0 +1,101 @@
+/*
+* @Author: Evrard Vincent
+* @Date:   2020-02-06 23:32:06
+* @Last Modified by:   oogre
+* @Last Modified time: 2020-03-21 03:56:54
+*/
+
+html{
+	padding: 0; 
+	margin: 0;
+	overflow: hidden;
+	background: black;
+}
+body {
+	padding: 0; 
+	margin: 0;
+	background: white;
+	width : 256px;
+	height : 256px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform : translate(-50%, -50%);
+}
+.wrapper{
+	overflow: scroll;
+	height: 100%;
+	position: relative;
+}
+
+.letter{
+	white-space: break-spaces;
+}
+
+.container{
+	white-space: pre-wrap;
+	word-break: break-all;
+	font-family: monospace;
+	font-size: 26.6px;
+}
+
+.player{
+	position: absolute;
+	width: 64px;
+	height: 16px;
+	background: black;
+	top: 52538px;
+	left: 2px;
+}
+.ball{
+	position: absolute;
+	/*top: 52522px;
+	/left: 0px;*/
+	background-color: red;
+	top: 52439px;
+	left: 120px;
+	font-family: monospace;
+	font-size: 26.6px;
+}
+
+.lookAt{
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	transform: translate(-50%,-50%);
+}
+.lookAt.UP{
+	top: 27px;
+}
+.lookAt.DOWN{
+	top: 254px;	
+}
+.lookAt:not(.UP):not(.DOWN){
+	display: none;
+}
+
+.lookAt.UP .arrow{
+	transform: rotateZ(0deg);
+}
+.lookAt.DOWN .arrow{
+	transform: rotateZ(180deg);
+}
+
+.arrow{
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+}
+
+.outer--arrow{
+	width: 50px;
+	height: 50px;
+	transform: translate(7px, 7px);
+}
+.inner--arrow{
+	width: 34px;
+	height: 34px;
+	background: red;
+	transform: rotateZ(45deg);
+}
