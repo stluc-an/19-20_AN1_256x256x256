@@ -15,13 +15,15 @@ function eventHandlerAscenseur(event){
     document.querySelector("#ascenseur2").classList.remove("hide");
     document.querySelector("#Jean_Michel").classList.remove("hide");
     
-    InteractionHelper.onScroll("#Jean_Michel", eventHandlerAlien);    
+    window.onscroll = function() {myFunction()};    
 }
 
-function eventHandlerAlien(event){
-    if (document.querySelector("#Jean_Michel").scrollTop < 150 ) {
-        
-        AppManager.levelComplete();
-        
+function myFunction() {
+  if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+    document.getElementById("myImg").className = "slideUp";
+  }
+        { AppManager.levelComplete(); 
+    
     }
+    
 }
