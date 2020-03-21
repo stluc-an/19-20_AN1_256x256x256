@@ -23,3 +23,26 @@ body {
 	left: 50%;
 	transform: translate(-50%, -50%);
 } 
+
+#follow {
+	width: 256px;
+	height: 256px;
+}
+
+.zone{
+	width: 10px;
+    height: 60px;
+    top: 105px;
+    left: 120px;
+    position: absolute;
+}
+
+#print{
+	width: 256px;
+	height: 256px;
+}
+
+
+.hide{
+	display: none;
+}

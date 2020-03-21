@@ -6,10 +6,22 @@
 \*----------------------------------------*/
 
 AppManager.ready(function(){
-	InteractionHelper.onBeforePrint( eventHandler);
+	InteractionHelper.onBeforePrint(print);
+	document.querySelector(".zone").classList.add("hide");
 });
 
-function eventHandler(event){
+function print(event){
+	console.log(event);
+	//AppManager.levelComplete();
+	document.querySelector("#print").classList.add("hide");
+	document.querySelector("#follow").classList.remove("hide");
+	document.querySelector(".zone").classList.remove("hide");
+
+	InteractionHelper.onMouseLeave(".zone", leave);
+
+}
+
+function leave(event){
 	console.log(event);
 	AppManager.levelComplete();
 }
