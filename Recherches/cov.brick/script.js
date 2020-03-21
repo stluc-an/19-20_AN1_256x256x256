@@ -2,7 +2,7 @@
   256^3 - script.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2020-02-06 23:31:08
-  @Last Modified time: 2020-03-21 04:17:24
+  @Last Modified time: 2020-03-21 04:20:30
 \*----------------------------------------*/
 const __CHAR_PER_LINE__ = 16;
 let player;
@@ -62,7 +62,6 @@ function update(time){
 		ball.start();
 		ball.isRunning = true;
 	}
-	
-	console.log("TEST")
+
 	requestAnimationFrame(update);
 }
