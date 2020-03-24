@@ -26,7 +26,7 @@ AppManager.ready(function(){
 function first (event){
 
 if (event.key == "p") {
-		anim2 = setInterval(monAnimation2, 10);
+		anim2 = setInterval(monAnimation2, 50);
 		InteractionHelper.onKeyDown(second);
 		console.log(event);
  	}
