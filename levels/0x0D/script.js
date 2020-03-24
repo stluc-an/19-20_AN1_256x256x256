@@ -15,7 +15,7 @@ function eventHandlerAscenseur(event){
     document.querySelector("#ascenseur2").classList.remove("hide");
     document.querySelector("#Jean_Michel").classList.remove("hide");
     
-    setTimeout (pause, 8000);
+    setTimeout (pause, 7000);
      
 }
 
