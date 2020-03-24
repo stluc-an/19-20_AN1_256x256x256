@@ -13,9 +13,11 @@ function actionWhenKeyDormeur(event){
     console.log(event);
     if(event.key == "c"){
         document.querySelector("#Dormeur2").classList.remove("hide");
-    }
     
-    setTimeout (pause, 4000);
+    
+    setTimeout (pause, 3000);
+        
+    }
 }
 
 function pause(){
