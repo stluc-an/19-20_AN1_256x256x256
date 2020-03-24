@@ -1,0 +1,58 @@
+/*
+* @Author: Evrard Vincent
+* @Date:   2020-02-06 23:32:06
+* @Last Modified by:   ogre
+* @Last Modified time: 2020-02-06 23:35:41
+*/
+
+html{
+	padding: 0; 
+	margin: 0;
+	overflow: hidden;
+	background: black;
+}
+body {
+	padding: 0; 
+	margin: 0;
+	background-image: url(./../../../public/images/256-Background01.png);
+	width : 256px;
+	height : 256px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+} 
+
+#Resize{
+    display: block;
+    opacity: 100%;
+    width: 256px;
+    height: 256px;
+    margin: 0;
+    position: absolute;
+    background-image:url(./../../../public/images/Resize.png); 
+    transition-timing-function: cubic-bezier(0,.67,1,.57);
+}
+
+#Hide {
+    display: none;
+    opacity: 0;
+    width: 128px;
+    height: 64px;
+    margin: 0;
+    position: absolute;
+    left: 64px;
+    top: 96px;
+    background-image: url(./../../../public/images/OnHide.png);
+    transition-timing-function: cubic-bezier(0,.67,1,.57);
+}
+
+#Success{
+    position: absolute;
+    width: 256px;
+    height: 256px;
+    display: none;
+    opacity: 0%;
+    background-image: url(./../../../public/images/Success.png);
+    transition-timing-function: cubic-bezier(0,.67,1,.57);
+}
