@@ -193,12 +193,15 @@
 			const getAvailableLevel = () => {
 				return new Promise((resolve)=> {
 					const availableLevel = [];
-					const lvls = (new Array(256))
+					let nEtudiant = 28 ; 
+					let espaceParEtudiant = 10;
+					const lvls = (new Array(nEtudiant * espaceParEtudiant))
 								.fill(0)
 								.map((p, k)=>{
-									let lvl_id = k.toString(16);
+									let lvl_id = (k%256).toString(16);
 									while(lvl_id.length<2) lvl_id = "0"+lvl_id;
 									lvl_id = lvl_id.toUpperCase();
+									lvl_id = lvl_id + (Math.floor(k/256)>0?"_bis" : "")
 									lvl_id = "0x"+lvl_id;
 									UI.addLevel(lvl_id);
 									return lvl_id;
