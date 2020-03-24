@@ -14,7 +14,7 @@ function eventHandler(event){
 	document.querySelector("#monImage1").classList.add("hide");
 	document.querySelector("#monImage2").classList.remove("hide");
 
-	InteractionHelper.onWindowResize(eventHandler2);
+	InteractionHelper.onWindowResize("#monImage2", eventHandler2);
 	}
 
 function eventHandler2(event){
