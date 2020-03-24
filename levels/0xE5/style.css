@@ -38,7 +38,7 @@ body {
     height: 50px;
     width: 50px;
     z-index: 2;
-    animation: fadeIn 10s;
+    animation: fadeIn 20s;
 }
 
 @keyframes fadeIn {
