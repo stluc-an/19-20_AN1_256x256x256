@@ -28,9 +28,9 @@ function setButtonOS(OS){
 	let allValues=["microsoft","apple","linux" ];
 	let controlBtns=  document.querySelector(".imgWrapper img");
 	for(let value of allValues){
-		controlBtns.classlist.remove(value);
+		controlBtns.classList.remove(value);
 	}
-	controlBtns.classlist.add(OS)
+	controlBtns.classList.add(OS)
 }
 
 function getOSname(){
