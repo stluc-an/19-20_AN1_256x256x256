@@ -7,9 +7,17 @@
 
 let idOfShownPicture = 0;
 
+let cursorAnim1 = 0
+let cursorAnim2 = 0
+let cursorAnim3 = 0
+
+let anim3;
+let anim2;
+let anim1;
+
 AppManager.ready(function(){
 
-	setInterval(monAnimation3, 50);
+	anim3 = setInterval(monAnimation3, 50);
 	InteractionHelper.onKeyDown(first);
 	console.log(event);
 });
@@ -18,7 +26,7 @@ AppManager.ready(function(){
 function first (event){
 
 if (event.key == "p") {
-		setInterval(monAnimation2, 10);
+		anim2 = setInterval(monAnimation2, 10);
 		InteractionHelper.onKeyDown(second);
 		console.log(event);
  	}
@@ -29,14 +37,10 @@ function second (event){
 
 
  	if (event.key == "w") {
-		setInterval(monAnimation, 250);
-		InteractionHelper.onKeyDown(done);
+		anim1 = setInterval(monAnimation, 250);
+		AppManager.levelComplete();
+		
  	}
-}
-
-function done (event){
-	console.log(event);
-	AppManager.levelComplete();
 }
 
 
@@ -45,10 +49,12 @@ function monAnimation(){
 	console.log(3);
 	let allpict = document.querySelectorAll(".anima");
 	
-	if(idOfShownPicture<allpict.length -1){
-		allpict[idOfShownPicture].classList.add("hide");
-		idOfShownPicture = idOfShownPicture + 1;
-		allpict[idOfShownPicture].classList.remove("hide");	
+	if(cursorAnim1<allpict.length -1){
+		allpict[cursorAnim1].classList.add("hide");
+		cursorAnim1 = cursorAnim1 + 1;
+		allpict[cursorAnim1].classList.remove("hide");	
+	} else{
+		clearInterval(anim1);
 	}
 
 }
@@ -58,10 +64,12 @@ function monAnimation2(){
 
 	let allpict = document.querySelectorAll(".anima2");
 	
-	if(idOfShownPicture<allpict.length -1){
-		allpict[idOfShownPicture].classList.add("hide");
-		idOfShownPicture = idOfShownPicture + 1;
-		allpict[idOfShownPicture].classList.remove("hide");	
+	if(cursorAnim2<allpict.length -1){
+		allpict[cursorAnim2].classList.add("hide");
+		cursorAnim2 = cursorAnim2 + 1;
+		allpict[cursorAnim2].classList.remove("hide");	
+	}else{
+		clearInterval(anim2);
 	}
 
 	}
@@ -71,10 +79,12 @@ function monAnimation2(){
 
 	let allpict = document.querySelectorAll(".anima3");
 	
-	if(idOfShownPicture<allpict.length -1){
-		allpict[idOfShownPicture].classList.add("hide");
-		idOfShownPicture = idOfShownPicture + 1;
-		allpict[idOfShownPicture].classList.remove("hide");	
+	if(cursorAnim3 < allpict.length -1){
+		allpict[cursorAnim3].classList.add("hide");
+		cursorAnim3 = cursorAnim3 + 1;
+		allpict[cursorAnim3].classList.remove("hide");	
+	}else{
+		clearInterval(anim3);
 	}
 
 }

@@ -37,13 +37,13 @@ body {
      height: 5px;
  }
  ::-webkit-scrollbar-thumb {
-     background: black;
+     background: white;
      border: 31px none #ffffff;
      border-radius: 5px;
  }
 
  ::-webkit-scrollbar-track {
-     background: #f0f0f0;
+     background: black;
      border: 1px solid #ffffff;
      border-radius: 10px;
  }

@@ -18,12 +18,22 @@ function actionWhenShowed(event){
 	let eye1 = document.querySelector("#eye1");
 	eye2.classList.remove("hide");
 	eye1.classList.add("hide");
-	InteractionHelper.onScroll(done);
+	InteractionHelper.onScroll("#scroll", done);
 }
 
 function done(event){
+	//console.log(document.getElementById("scroll").scrollTop);
+	
+
+	if (document.getElementById("scroll").scrollTop > 1) {
+		
+		setTimeout(theEnd, 2000);
+	}
+}
+
+function theEnd(){
 	AppManager.levelComplete();
-	console.log(4);
+
 }
 
 	
