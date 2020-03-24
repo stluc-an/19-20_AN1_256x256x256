@@ -24,7 +24,7 @@ function scroll(event){
 //	console.log(event);
 
 	console.log(document.body.scrollTop);
-	if(document.body.scrollTop>470){
+	if(document.body.scrollTop>400){
 		AppManager.levelComplete();
 	}
 	
