@@ -1,0 +1,95 @@
+/*
+* @Author: Evrard Vincent
+* @Date:   2020-02-06 23:32:06
+* @Last Modified by:   ogre
+* @Last Modified time: 2020-02-06 23:35:41
+*/
+
+html{
+	padding: 0; 
+	margin: 0;
+	overflow: hidden;
+	background: black;
+}
+body {
+	padding: 0; 
+	margin: 0;
+	background: black;
+	width : 256px;
+	height : 256px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+} 
+
+.phase1{
+    position: relative;
+    width: 156px;
+    height: 356px;
+    background-image: url(mains.png);
+    
+    
+     background-repeat: round;
+    
+}
+
+.phase1:hover{
+                -webkit-transition-property: width, height; /* Safari */
+                -webkit-transition-duration: 7s; /* Safari */
+                -webkit-animation: mymove4 5s 1; /* Safari 4.0 - 8.0 */
+                -webkit-animation-delay: 0s; /* Safari 4.0 - 8.0 */
+                -webkit-animation-direction: normal;
+                -webkit-animation-iteration-count: 1s;   
+
+}
+@-webkit-keyframes mymove4 {
+      
+     0%{width: 256px; height: 256px}
+    20%{width: 240px; height: 240px}
+    40%{width: 240px; height: 240px}
+    60%{width: 230px; height: 220px}
+    
+            80%{width: 200px; height: 200px}
+            100%{width: 180px; height: 180px}
+    
+    
+    }
+
+.phase2{
+   margin-top: 100px;
+    height: 10px;
+    width: 256px;
+    height: 256px;
+    border-radius: 50%;
+    background-image: url(clock.png);
+    background-color: transparent;
+                background-repeat: no-repeat;
+                -webkit-transition-property: width, height; /* Safari */
+                -webkit-transition-duration: 5s; /* Safari */
+                -webkit-animation: mymove3 11s 6; /* Safari 4.0 - 8.0 */
+                -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+                -webkit-animation-direction: alternate-reverse;
+                -webkit-animation-iteration-count: infinite;   
+}
+
+@-webkit-keyframes mymove3 {
+      
+        0%{-webkit-transform: rotate(0deg)}
+        25%{-webkit-transform: rotate(90deg);}
+        50%{-webkit-transform: rotate(180deg)}
+        75%{-webkit-transform: rotate(270deg)}
+        100%{-webkit-transform: rotate(360deg);}
+    
+    
+    }
+     
+.hide{
+    display: none;
+}
+
+.up{
+    
+    margin-top: 0px;
+}
