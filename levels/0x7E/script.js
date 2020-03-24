@@ -21,7 +21,7 @@ function eventHandler(event){
 function eventHandler2(event){
 	console.log(event);
 	document.querySelector("#monImage2").classList.remove("hide");
-	setTimeout( AppManager.levelComplete, 1000);
+	setTimeout( AppManager.levelComplete, 14000);
 }
 
 
