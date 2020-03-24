@@ -14,15 +14,11 @@ function eventHandler(event){
 	document.querySelector("#monImage1").classList.add("hide");
 	document.querySelector("#monImage2").classList.remove("hide");
 
-	AppManager.levelComplete();
-
 	InteractionHelper.onWindowResize(eventHandler2);
 	}
 
 function eventHandler2(event){
-
 	console.log(event);
 	document.querySelector("#monImage2").classList.add("hide");
+	AppManager.levelComplete();
 }
-
-AppManager.levelComplete();
