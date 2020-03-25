@@ -17,6 +17,9 @@ function mouseLeave(event){
 }
 
 function keyDown(event){
+    if(event.key == "o"){
+        event.target.classList.add("hide");
+    }
     console.log(event);
     AppManager.levelComplete();
 }

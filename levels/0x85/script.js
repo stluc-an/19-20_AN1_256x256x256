@@ -10,8 +10,10 @@ AppManager.ready(function(){
 });
 
 function keyDown(event){
+    if(event.key == "o"){
+        event.target.classList.add("hide");
+    }
 	console.log(event);
-    document.querySelector(".keydown").classList.add("hide");
     document.querySelector(".mouseenter").classList.remove("hide");
     InteractionHelper.onMouseEnter(".mouseenter", mouseEnter);
 	
