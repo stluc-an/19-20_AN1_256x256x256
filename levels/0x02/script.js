@@ -14,7 +14,6 @@ function buttonPressed(event){
     event.target.classList.add("hide");
     setTimeout(showlongtap,700)
     
-
 }
 
 function showlongtap(){
@@ -28,13 +27,6 @@ function showlongtap(){
 
 function longtap(event){
     console.log(event);
-    setTimeout(showlongtapped, 500);
-
-}
-
-function showlongtapped(){
-     document.querySelector(".longtap").classList.add("hide");
-    document.querySelector(".longtapped").classList.remove("hide");
     AppManager.levelComplete();
 }
 
