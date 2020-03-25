@@ -28,12 +28,14 @@ function OnDropFile(event){
 
 
 function done(){
-	document.querySelector(".poster").classList.remove("hide");
+	if(event.type == "drop"){
+
+     document.querySelector(".poster").classList.remove("hide");
 	AppManager.levelComplete();
-
-
-
+    }
 }
+
+
 
 function monAnimation(){
 	let allpict = document.querySelectorAll(".animA");
