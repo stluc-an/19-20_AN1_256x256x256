@@ -1,0 +1,73 @@
+/*
+* @Author: Vanhecke Matthieu
+* @Date:   2020
+* @Last Modified by:   Vanhecke
+* @Last Modified time: 2020-03-03 18:15
+*/
+
+html{
+	padding: 0; 
+	margin: 0;
+	overflow: hidden;
+	background: black;}
+body {
+	padding: 0; 
+	margin: 0;
+	width : 256px;
+	height : 256px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #eee;}
+
+/*interface 1*/
+	#pdf {
+		position: absolute;
+		top: 50%; left: 50%; transform: translate(-50%, -50%);
+		transition: 0.2s;}
+	.pdf1 {height: 120px;}
+	.pdf2 {height: 0px;}
+
+	#ppdf {
+		position: absolute; font-family: verdana;
+		top: 183px; left: 50%; transform: translate(-50%, 0%);
+		transition: 0.2s;}
+	.ppdf1 {height: 120px;}
+	.ppdf2 {font-size: 0px;}
+
+
+/*interface 2*/
+	#navbar {
+		background-color: #ddd; box-shadow: 0px 2px 2px #bbb;
+		height: 50px; width: 256px; position: absolute;
+		text-align: center;
+		padding: 0px; margin: 0px; transition: 0.5s;}
+	.navbar1 {top: -60px;}
+	.navbar2 {top: 0px;}
+
+	#print {
+		background-color: #fff; border: none; border-radius: 100px;
+		box-shadow: 0px 0px 5px #aaa;
+		position: absolute; right: 25px; top: 8px;
+		height: 34px; width: 34px;
+		transition: 0.2s;}
+	#print:hover {height: 40px; width: 40px; right: 21px; top: 6px;}
+	#printIMG {width: 80%; position: absolute; left: 10%; top: 10%;}
+
+	#page {
+		font-family: verdana; font-size: 20px;
+		margin: 0px; padding: 13px;
+	}
+
+	#text {
+		position: absolute; height: 256px; width: 216px;
+		background-color: white; box-shadow: 0px 0px 7.5px #aaa;
+		left: 20px; transition: 0.5s; text-align: justify;}
+	.text1 {top: 500px;}
+	.text2 {top: 65px;}
+
+	#textp {
+		font-family: calibri; padding: 10px;
+	}
