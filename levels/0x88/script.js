@@ -38,9 +38,15 @@ function second (event){
 
  	if (event.key == "w") {
 		anim1 = setInterval(monAnimation, 250);
-		AppManager.levelComplete();
+		setTimeout(theEnd, 1000);}
+		
 		
  	}
+
+function theEnd (){
+	AppManager.levelComplete();
+
+
 }
 
 

@@ -6,11 +6,15 @@
 \*----------------------------------------*/
 
 AppManager.ready(function(){
-	InteractionHelper.onDoubleTap("#tap",SecondDoubleTap);
+	InteractionHelper.onDoubleTap("#dossier",SecondDoubleTap);
 });
 
 function SecondDoubleTap(event){
-	InteractionHelper.onDoubleTap("#tap",Done);
+	dossier = document.querySelector("#dossier");
+	dossier.classList.add("hide");
+	appli = document.querySelector("#feuille");
+	appli.classList.remove("hide");
+	InteractionHelper.onDoubleTap("#feuille",Done);
 	console.log(event);
 }
 

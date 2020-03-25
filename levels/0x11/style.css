@@ -21,11 +21,29 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	translate: -50% -50%;
+	transform: translate(-50% ,-50%);
 } 
 
 #tap {
 
 	height: 256px;
 	width: 256px;
+}
+
+.DE{
+	position: absolute;
+	height: 130px;
+    width: 130px;
+    left: 61px;
+    top: 60px;
+}
+
+.hide{
+
+	display: none;
+}
+
+.DE:hover{
+	background: lightgrey;
+	transition: 1s;
 }
