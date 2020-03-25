@@ -12,11 +12,11 @@ AppManager.ready(function(){
 
 function keyDown(event){
 	if(event.key == "o"){
-        event.target.classList.add("hide");
-        
-    }
-    InteractionHelper.onSound(sound);
+        document.querySelector(".prog").classList.add("hide");
         document.querySelector(".oreille").classList.remove("hide");
+        InteractionHelper.onSound(sound);
+    }
+    
     
     
 }

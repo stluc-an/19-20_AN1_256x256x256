@@ -20,5 +20,11 @@ function doubleTap(event){
     console.log(event);
     document.querySelector(".mamoth").classList.add("hide");
     document.querySelector(".mamoth2").classList.remove("hide");
-    AppManager.levelComplete();
+    setTimeout(lvlComplete, 700);
+
+}
+
+
+function lvlComplete(){
+        AppManager.levelComplete();
 }

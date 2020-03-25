@@ -6,7 +6,7 @@
 \*----------------------------------------*/
 
 AppManager.ready(function(){
-    setTimeout(showMontre,700)
+    setTimeout(showMontre,1200)
 	
 });
 

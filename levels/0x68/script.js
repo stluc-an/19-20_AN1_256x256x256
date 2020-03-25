@@ -18,8 +18,8 @@ function mouseLeave(event){
 
 function keyDown(event){
     if(event.key == "x"){
-        event.target.classList.add("hide");
         AppManager.levelComplete();
+        console.log(event);
     }
-    console.log(event);
+
 }

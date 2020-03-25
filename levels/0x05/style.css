@@ -29,5 +29,5 @@ body {
 }
 
 #tap,#tapped,#cible{
-    height:256px;
+    width:256px;
 }
