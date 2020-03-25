@@ -14,7 +14,7 @@ html{
 body {
 	padding: 0; 
 	margin: 0;
-	background-image: url(./images/256-Background02.png);
+	background-image: url(./256-Background02.png);
 	width : 256px;
 	height : 256px;
 	overflow: hidden;
@@ -32,7 +32,7 @@ body {
     left: 64px;
     top: 64px;
     position: absolute;
-    background-image:url(./images/Print.png);   
+    background-image:url(./Print.png);   
     transition-timing-function: cubic-bezier(0,.67,1,.57);
 }
 
@@ -45,7 +45,7 @@ body {
     position: absolute;
     left: 64px;
     top: 96px;
-    background-image: url(./images/OnHide.png);
+    background-image: url(./OnHide.png);
     transition-timing-function: cubic-bezier(0,.67,1,.57);
 }
 
@@ -55,6 +55,6 @@ body {
     height: 256px;
     display: none;
     opacity: 0%;
-    background-image: url(./images/Success.png);
+    background-image: url(./Success.png);
     transition-timing-function: cubic-bezier(0,.67,1,.57);
 }

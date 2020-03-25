@@ -14,7 +14,7 @@ html{
 body {
 	padding: 0; 
 	margin: 0;
-	background-image: url(./images/256-Background01.png);
+	background-image: url(./256-Background01.png);
 	width : 256px;
 	height : 256px;
 	overflow: hidden;
@@ -56,7 +56,7 @@ body {
     height: 128px;
     left: 25%;
     bottom: 25%;
-    background-image: url(./images/MouseLeave.png);
+    background-image: url(./MouseLeave.png);
     transition-timing-function: cubic-bezier(0,.67,1,.57);
 }
 
@@ -66,6 +66,6 @@ body {
     height: 256px;
     display: none;
     opacity: 0%;
-    background-image: url(./images/Success.png);
+    background-image: url(./Success.png);
     transition-timing-function: cubic-bezier(0,.67,1,.57);
 }

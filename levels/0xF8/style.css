@@ -14,7 +14,7 @@ html{
 body {
 	padding: 0; 
 	margin: 0;
-	background-image: url(./images/256-Background02.png);
+	background-image: url(./256-Background02.png);
 	width : 256px;
 	height : 256px;
 	overflow: hidden;
@@ -30,7 +30,7 @@ body {
     height: 128px;
     left: 25%;
     bottom: 25%;
-    background-image: url(./images/Microphone.png);
+    background-image: url(./Microphone.png);
     transition-timing-function: cubic-bezier(0,.67,1,.57);
 }
 
@@ -43,7 +43,7 @@ body {
     margin: 0;
     left: 96px;
     top: 96px;
-    background-image: url(./images/KeyUp.png);
+    background-image: url(./KeyUp.png);
     transition-timing-function: cubic-bezier(0,.67,1,.57);
 }
 
@@ -53,6 +53,6 @@ body {
     height: 256px;
     display: none;
     opacity: 0%;
-    background-image: url(./images/Success.png);
+    background-image: url(./Success.png);
     transition-timing-function: cubic-bezier(0,.67,1,.57);
 }
