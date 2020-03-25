@@ -6,15 +6,23 @@
 \*----------------------------------------*/
 
 AppManager.ready(function(){
-	InteractionHelper.onShow(show);
+    setTimeout(showMontre,700)
+	
 });
+
+function showMontre(){
+    document.querySelector(".show1").classList.add("hide");
+    InteractionHelper.onShow(show);
+}
 
 function show(event){
 	console.log(event);
-    InteractionHelper.onMouseEnter(".target", mouseEnter);
+    document.querySelector(".show2").classList.add("hide");
     document.querySelector(".target").classList.remove("hide");
+    InteractionHelper.onMouseEnter(".target", mouseEnter);
     
 }
+
 
 function mouseEnter(event){
     console.log(event);

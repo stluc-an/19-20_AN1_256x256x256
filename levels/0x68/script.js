@@ -6,7 +6,7 @@
 \*----------------------------------------*/
 
 AppManager.ready(function(){
-	InteractionHelper.onMouseLeave("div", mouseLeave);
+	InteractionHelper.onMouseLeave(".inside", mouseLeave);
 });
 
 function mouseLeave(event){
@@ -17,7 +17,7 @@ function mouseLeave(event){
 }
 
 function keyDown(event){
-    if(event.key == "o"){
+    if(event.key == "x"){
         event.target.classList.add("hide");
         AppManager.levelComplete();
     }

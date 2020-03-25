@@ -6,7 +6,7 @@
 \*----------------------------------------*/
 
 AppManager.ready(function(){
-	InteractionHelper.onHide( hide);
+	InteractionHelper.onHide(hide);
 });
 
 function hide(event){

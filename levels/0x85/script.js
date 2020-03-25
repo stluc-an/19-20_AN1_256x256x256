@@ -10,12 +10,13 @@ AppManager.ready(function(){
 });
 
 function keyDown(event){
-    if(event.key == "o"){
-        event.target.classList.add("hide");
-    }
-	console.log(event);
+    if(event.key == "p"){
+        document.querySelector(".keydown").classList.add("hide");
+        console.log(event);
     document.querySelector(".mouseenter").classList.remove("hide");
     InteractionHelper.onMouseEnter(".mouseenter", mouseEnter);
+    }
+	
 	
 }
 

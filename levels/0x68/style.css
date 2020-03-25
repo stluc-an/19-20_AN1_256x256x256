@@ -28,6 +28,11 @@ body {
     display: none;
 }
 
-#cage,#progra{
+.inside{
+    width: 100px;
+    height: 100px;
+}
+
+#map,#x{
     height: 256px;
 }

@@ -28,6 +28,6 @@ body {
     display: none;
 }
 
-#progra,#cible{
-    height: 256px;
+#p,#trou{
+    width: 256px;
 }

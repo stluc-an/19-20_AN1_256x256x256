@@ -12,14 +12,8 @@ AppManager.ready(function(){
 function buttonPressed(event){
 	console.log(event);
     event.target.classList.add("hide");
-    setTimeout(showMouseEnter,500);
     InteractionHelper.onMouseEnter(".mouseenter", mouseEnter);
 
-}
-
-function showMouseEnter(){
-    document.querySelector(".tappedme").classList.add("hide");
-    document.querySelector(".mouseenter").classList.remove("hide");
 }
 
 function mouseEnter(event){

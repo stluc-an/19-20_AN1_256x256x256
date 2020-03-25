@@ -28,7 +28,7 @@ body {
     display: none;
 }
 
-#progra,#oreille{
-    height: 256px;
+#casque,#masque{
+    width: 256px;
     text-align: center;
 }

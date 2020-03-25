@@ -12,15 +12,8 @@ AppManager.ready(function(){
 function Tap(event){
 	console.log(event);
     event.target.classList.add("hide");
-    document.querySelector(".tappedme").classList.remove("hide");
-    setTimeout(showhide , 500 )
-    InteractionHelper.onHide(Hide);
-    
-}
-
-function showhide(){
-    document.querySelector(".tappedme").classList.add("hide");
     document.querySelector(".cache").classList.remove("hide");
+    InteractionHelper.onHide(Hide);
     
 }
 
