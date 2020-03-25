@@ -45,6 +45,8 @@ width: 126px;
 	z-index: 10;
 	height: 126px;
     width: 126px;
+    top: 43px;
+    left: 69px;
     position: absolute;
     color: aliceblue;
 }
