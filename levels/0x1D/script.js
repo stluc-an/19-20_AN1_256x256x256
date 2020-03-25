@@ -22,5 +22,5 @@ function eventHandler(event){
 function scrollHandler(event){
 
 
-	AppManager.levelComplete();
+	setTimeout ( AppManager.levelComplete, 1700);
 }

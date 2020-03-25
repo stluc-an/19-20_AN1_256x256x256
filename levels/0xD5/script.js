@@ -18,5 +18,5 @@ function eventHandler(event){
 
 function MouseEnterHandler(event){
 
-	AppManager.levelComplete();
+	setTimeout ( AppManager.levelComplete, 300);
 }

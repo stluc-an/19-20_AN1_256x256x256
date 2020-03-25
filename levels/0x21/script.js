@@ -22,6 +22,6 @@ function eventHandler(event){
 function DTAPHandler(event){
 	document.getElementById('pina').classList.add('pinataDEAD');
 	document.getElementById('pinaDEAD').classList.add('show');
-	AppManager.levelComplete();
+	setTimeout ( AppManager.levelComplete, 500);
 
 }

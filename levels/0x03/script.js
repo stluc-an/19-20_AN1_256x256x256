@@ -20,5 +20,5 @@ function dragHandler(event){
 
 	document.getElementById('a').classList.remove('drag');
 	document.getElementById('a').classList.add('dragged');
-	AppManager.levelComplete();
+	setTimeout ( AppManager.levelComplete, 400);
 }

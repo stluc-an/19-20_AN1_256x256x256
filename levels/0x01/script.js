@@ -19,6 +19,6 @@ function eventHandler(event){
 
 function DTHandler(event){
 	document.getElementById('matt').classList.add('mattC');
-	AppManager.levelComplete();
+	setTimeout ( AppManager.levelComplete, 500);
 
 }
