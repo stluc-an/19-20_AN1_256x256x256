@@ -19,5 +19,5 @@ function actionWhenLeaveImage1(event){
 
 function actionWhenEnterImage2(event){
 	console.log(event);
+	AppManager.levelComplete();
 }
-AppManager.levelComplete();

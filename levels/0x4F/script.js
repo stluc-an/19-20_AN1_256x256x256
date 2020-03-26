@@ -25,9 +25,3 @@ function actionWhenSounded(event){
 		setTimeout( AppManager.levelComplete , 1000 );
 	}
 }
-AppManager.levelComplete();
-
-
-
-
-
