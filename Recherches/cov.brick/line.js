@@ -2,7 +2,7 @@
   19-20_AN1_256x256x256 - line.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2020-03-21 02:11:17
-  @Last Modified time: 2020-03-21 03:52:59
+  @Last Modified time: 2020-03-26 16:37:17
 \*----------------------------------------*/
 
 
@@ -17,7 +17,7 @@ class Line{
 	}
 	update(deltaTime){
 		const y = this.element.offsetTop-this.wrapper.scrollTop;
-		if(!this.isAlive || y<0 || y + this.element.offsetHeight > 256)return false;
+		if(!this.isAlive || y< 0 || y + this.element.offsetHeight > 256)return false;
 		this.area = {
 			x1 : this.element.offsetLeft,
 			y1 : this.element.offsetTop,
