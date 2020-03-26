@@ -2,7 +2,7 @@
   256^3 - script.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2020-02-06 23:31:08
-  @Last Modified time: 2020-03-21 04:20:30
+  @Last Modified time: 2020-03-26 16:28:22
 \*----------------------------------------*/
 const __CHAR_PER_LINE__ = 16;
 let player;
@@ -22,10 +22,12 @@ AppManager.ready(function(){
 		(new Array(__CHAR_PER_LINE__*5)).join(" ")
 	).debit(__CHAR_PER_LINE__)
 	.map((line, k)=>new Line(line, k));
-	player = new Player();
-	ball = new Ball();
-	lookAt = document.querySelector(".lookAt")
-	requestAnimationFrame(update);
+	setTimeout(()=>{
+		player = new Player();
+		ball = new Ball();
+		lookAt = document.querySelector(".lookAt")
+		requestAnimationFrame(update);
+	}, 1000)
 });
 
 
