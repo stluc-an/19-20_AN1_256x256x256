@@ -14,7 +14,7 @@ AppManager.ready(function(){
 function doubleTap(event){
 	console.log(event);
     event.target.classList.add("hide");
-	AppManager.levelComplete();
+
 InteractionHelper.onDropFile(".file", dropFile);
 }
 

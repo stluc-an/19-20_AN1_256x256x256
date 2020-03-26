@@ -11,7 +11,7 @@ AppManager.ready(function(){
 
 function dropFile(event){
 	console.log(event);
-	AppManager.levelComplete();
+	
     event.target.classList.add("hide");
     InteractionHelper.onDropFile(".phase2", dropFile2);
 

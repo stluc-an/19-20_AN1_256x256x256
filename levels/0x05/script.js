@@ -11,7 +11,7 @@ AppManager.ready(function(){
 
 function tap(event){
 	console.log(event);
-	AppManager.levelComplete();
+	
     event.target.classList.add("hide");
     InteractionHelper.onMouseEnter(".phase2", mouseEnter);
 }

@@ -11,7 +11,7 @@ AppManager.ready(function(){
 
 function show(event){
 	console.log(event);
-	AppManager.levelComplete();
+	
     document.querySelector(".phase1").classList.add("hide");
     InteractionHelper.onKeyDown( keyDown);
 }

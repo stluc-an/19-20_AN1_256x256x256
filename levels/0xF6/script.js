@@ -13,7 +13,7 @@ function sound(event){
     if(event.intensity>100){
         
 	console.log(event);
-	AppManager.levelComplete();
+
     document.querySelector(".phase1").classList.add("hide");
     InteractionHelper.onMouseLeave(".phase2", mouseLeave);
     }

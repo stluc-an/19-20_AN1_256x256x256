@@ -11,7 +11,6 @@ AppManager.ready(function(){
 
 function longTap(event){
 	console.log(event);
-	AppManager.levelComplete();
      event.target.classList.add("hide");
      InteractionHelper.onTimeout(10000, timeOut);
     document.querySelector(".phase2").classList.add("up");

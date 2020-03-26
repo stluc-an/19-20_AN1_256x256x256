@@ -1,4 +1,4 @@
-/*----------------------------------------*\
+a/*----------------------------------------*\
   256^3 - script.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2020-02-06 23:31:08
@@ -15,7 +15,7 @@ AppManager.ready(function(){
 function keyUp(event){
 	console.log(event);
     document.querySelector(".phase1").classList.add("hide");
-	AppManager.levelComplete();
+	
     InteractionHelper.onDoubleTap(".jard1", doubleTap);
 }
 

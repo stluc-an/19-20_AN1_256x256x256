@@ -11,7 +11,7 @@ AppManager.ready(function(){
 
 function mouseEnter(event){
 	console.log(event);
-	AppManager.levelComplete();
+	
     event.target.classList.add("hide");
     InteractionHelper.onHide( hide);
 }
