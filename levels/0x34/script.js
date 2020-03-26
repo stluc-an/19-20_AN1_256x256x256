@@ -19,5 +19,7 @@ function eventHandler(event){
 
 function FDHandler(event){
 
-	AppManager.levelComplete();
+	if(event.type=="drop"){
+		AppManager.levelComplete();	
+	}
 }
