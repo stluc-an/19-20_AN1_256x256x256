@@ -20,8 +20,10 @@ InteractionHelper.onDropFile(".file", dropFile);
 
 function dropFile(event){
     
-    console.log(event);
+    	if(event.type=="drop"){
+		AppManager.levelComplete();	
+	console.log(event);
     event.target.classList.add("hide");
-	AppManager.levelComplete();
+	}
     
 }

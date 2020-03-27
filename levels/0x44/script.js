@@ -10,14 +10,18 @@ AppManager.ready(function(){
 });
 
 function dropFile(event){
+    if(event.type=="drop"){
 	console.log(event);
-	
     event.target.classList.add("hide");
     InteractionHelper.onDropFile(".phase2", dropFile2);
+    }
 
 }
 function dropFile2(event){
+    
+		if(event.type=="drop"){
+		AppManager.levelComplete();	
 	console.log(event);
-	AppManager.levelComplete();
     event.target.classList.add("hide");
+	}
 }
