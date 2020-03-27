@@ -26,13 +26,16 @@ body {
 
 #piano{
 	position:relative;
-	width: 100px;
+	width: 200px;
+	height: 250px;
+}
+
+#change{
+	position: relative;
+	width: 300px;
 }
 
 .hide{
 	display: none;
 }
 
-#resize{
-	width: 300px;
-}

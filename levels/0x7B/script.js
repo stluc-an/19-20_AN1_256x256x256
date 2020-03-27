@@ -11,7 +11,6 @@ AppManager.ready(function(){
 
 function eventHandler(event){
 	document.querySelector("#piano").classList.add("hide");
-	document.querySelector("#resize").classList.remove("hide");
 	console.log(event);
 	InteractionHelper.onWindowResize(hideWhenResize );
 }

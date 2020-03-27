@@ -10,11 +10,15 @@ AppManager.ready(function(){
 });
 
 function eventHandler(event){
-	document.querySelector("#doc").classList.remove("hide");
-	console.log(event);
-	InteractionHelper.onTap("#doc", winWhenTap);
+	if(event.type=="drop"){
+		document.querySelector("#doc").classList.remove("hide");
+		console.log(event);
+		InteractionHelper.onTap("#doc", winWhenTap);
+		AppManager.levelComplete();	
+	}
 }
 
 function winWhenTap(event){
 	AppManager.levelComplete();
 }
+
