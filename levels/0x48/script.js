@@ -11,7 +11,7 @@ AppManager.ready(function(){
 
 function dfile(event){
 	console.log(event);
-  
+  if(event.type=="drop")
     document.querySelector("#Image1").classList.add ("hide");
     document.querySelector("#Image2").classList.remove("hide");
 

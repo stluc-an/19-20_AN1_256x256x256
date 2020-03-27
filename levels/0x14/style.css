@@ -1,0 +1,61 @@
+/*
+* @Author: Evrard Vincent
+* @Date:   2020-02-06 23:32:06
+* @Last Modified by:   ogre
+* @Last Modified time: 2020-02-06 23:35:41
+*/
+
+html{
+	padding: 0; 
+	margin: 0;
+	overflow: hidden;
+	background: black;
+}
+body {
+	padding: 0; 
+	margin: 0;
+	background: transparent;
+	width : 256px;
+	height : 256px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+} 
+.phase1{
+    position: relative;
+    background-image: url(PAGE4bis-rayon.jpg);
+    width: 156px;
+    height: 156px;
+    
+   border: 50px solid transparent;
+    padding: 1px;
+  
+}
+
+.phase1:hover{
+    border-radius: 50%;
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 56px;
+    height: 56px;
+    border-image: url(Croix-72.png) 1000 round;
+    
+    overflow: scroll;
+}
+
+.hide{
+    display: none;
+}
+
+.file{
+    
+    margin-top: 10px;
+    height: 10px;
+    width: 10px;
+}
+.file:hover{
+    
+    transform: matrix(0, 0, 0, 0, 10, 10);
+}

@@ -1,0 +1,53 @@
+/*
+* @Author: Evrard Vincent
+* @Date:   2020-02-06 23:32:06
+* @Last Modified by:   ogre
+* @Last Modified time: 2020-02-06 23:35:41
+*/
+
+html{
+	padding: 0; 
+	margin: 0;
+	overflow: hidden;
+	background: black;
+}
+body {
+	padding: 0; 
+	margin: 0;
+	background: white;
+	width : 256px;
+	height : 256px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+} 
+
+.bigRedButton {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    border-radius: 50%;
+    top: 53px;
+    position: absolute;
+    left: 53px;
+}
+
+.bigRedButton:hover {
+    box-shadow: inset 1px 1px 20px black;
+}
+
+.hide{
+    display: none;
+    
+}
+
+.arrow {
+      width: 232px;
+    height: 24px;
+    position: absolute;
+    background: black;
+    transform: rotate(45deg);
+    top: 109px;
+}

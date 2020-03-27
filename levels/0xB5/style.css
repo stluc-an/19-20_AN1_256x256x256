@@ -1,0 +1,71 @@
+/*
+* @Author: Evrard Vincent
+* @Date:   2020-02-06 23:32:06
+* @Last Modified by:   ogre
+* @Last Modified time: 2020-02-06 23:35:41
+*/
+
+html{
+	padding: 0; 
+	margin: 0;
+	overflow: hidden;
+	background: black;
+}
+body {
+	padding: 0; 
+	margin: 0;
+	background:  black;
+	width : 256px;
+	height : 256px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+} 
+.phase1{
+    
+    width: 256px;
+    height: 256px;
+    background-image: url(zonmai.png);
+}
+.phase1:hover{
+    
+
+    width: 256px;
+    height: 256px;
+    background-image: url(zonmai.png);
+    
+        background-repeat: round;
+}
+
+.phase2{
+    margin-left: 50px;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    background-image: url(voiture.png);
+    background-color: transparent;
+                background-repeat: no-repeat;
+                -webkit-transition-property: width, height; /* Safari */
+                -webkit-transition-duration: 0.2s; /* Safari */
+                -webkit-animation: mymove3 0.5s 1; /* Safari 4.0 - 8.0 */
+                -webkit-animation-delay: 0s; /* Safari 4.0 - 8.0 */
+                -webkit-animation-direction: alternate-reverse;
+                -webkit-animation-iteration-count: infinite;   
+}
+
+@-webkit-keyframes mymove3 {
+      
+    0%{-webkit-transform: rotate(0deg); height: 10px; left: 20px; right: 10px}
+    25%{-webkit-transform: rotate(200deg); height: 300px; left: 40px; right: 0px}
+    50%{-webkit-transform: rotate(480deg); height: 50px; width: 10px; right: 30px}
+    75%{-webkit-transform: rotate(970deg); height: 90px; left: 70px; right: 0px}
+    100%{-webkit-transform: rotate(60deg); height: 2000px; width: 1px; right: 0px}
+    
+    
+    }
+
+.hide{
+    display: none;
+}
