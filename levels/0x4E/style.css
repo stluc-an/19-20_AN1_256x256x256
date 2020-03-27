@@ -26,16 +26,21 @@ body {
 #boite{
 
 	position:relative;
-	height:100px;
-	left:30%;
-	top:20%;
+	height:256px;
+	left:0%;
+	top:0%;
 }
+.hide{
+	display:none ;
+	}
 
 #rond{
-position: relative;
-height:100px;
-left:30%;
-top:20%;
+	position: relative;
+	height:256px;
+	left:0%;
+	top:0%;
 }
+
+
 
 }

@@ -6,16 +6,25 @@
 \*----------------------------------------*/
 
 AppManager.ready(function(){
-	InteractionHelper.onDropFile("#boite", eventHandler);
+	 InteractionHelper.onDropFile("#boite", eventHandler); 
+	
+
 });
 
 function eventHandler(event){
-	InteractionHelper.onTimeout(4000,  time);
 
+	document.querySelector("#boite").classList.add("hide");
+	/* document.querySelector("#rond").classList.remove("hide"); */
+
+	console.log("==> 1");
+
+	/* InteractionHelper.onTimeout(4000,  time); */
 	console.log(event);
+
+	InteractionHelper.onTimeout(4000,  time);
+	console.log("==> 2");
 	
 }
-
 
 
 function time(event){
