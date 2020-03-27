@@ -15,5 +15,7 @@ function fermeFenetre(event){
 }
 function victoire(event){
 	//console.log(event);
+	if("u"==event.key){
 	AppManager.levelComplete();
+	}
 }

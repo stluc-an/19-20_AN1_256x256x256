@@ -9,11 +9,14 @@ AppManager.ready(function(){
 	InteractionHelper.onKeyDown(eventHandler);
 });
 function eventHandler(event){
+	if("s"==event.key){
 	document.getElementById("roses").classList.add("hide");
-	//console.log(event);
+	//console.log(event); 
 	InteractionHelper.onDropFile("#file", victoire);
+	}
 }
 function victoire(event){
 	//console.log(event);
 	AppManager.levelComplete();
-}
+}	
+
