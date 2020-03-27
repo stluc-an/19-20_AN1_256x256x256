@@ -23,6 +23,7 @@ InteractionHelper.onDropFile("#Image2", dfile);
 
 function dfile(event){
 	console.log(event);
+    
 	AppManager.levelComplete();
 
 }
