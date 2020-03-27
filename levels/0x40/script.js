@@ -14,7 +14,6 @@ function eventHandler(event){
 		document.querySelector("#doc").classList.remove("hide");
 		console.log(event);
 		InteractionHelper.onTap("#doc", winWhenTap);
-		AppManager.levelComplete();	
 	}
 }
 

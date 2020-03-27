@@ -10,7 +10,8 @@ AppManager.ready(function(){
 });
 
 function eventHandler(event){
-
+	document.querySelector("#chrome").classList.add("hide");
+	document.querySelector("#glass").classList.remove("hide");
 	InteractionHelper.onWindowResize(redimension)
 	console.log(event);
 }

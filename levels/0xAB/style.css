@@ -23,3 +23,17 @@ body {
 	left: 50%;
 	translate: -50% -50%;
 } 
+
+#chrome{
+	position: relative;
+	width: 300px;
+}
+
+#glass{
+	position: relative;
+	width: 300px;
+}
+
+.hide{
+	display: none;
+}
