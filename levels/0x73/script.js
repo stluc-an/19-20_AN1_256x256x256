@@ -26,6 +26,7 @@ function Dragging(){
     
     document.getElementById("DragIt").style.left = event.mouseX+"px"
     document.getElementById("DragIt").style.top = event.mouseY+"px";
+    InteractionHelper.onDrag("#DragIt", YouWon);
 }
 
 

@@ -14,13 +14,14 @@ html{
 body {
 	padding: 0; 
 	margin: 0;
-	background-image: url(./../../../public/images/256-Background02.png);
+	background-image: url(./256-Background02.png);
 	width : 256px;
 	height : 256px;
 	overflow: hidden;
 	position: absolute;
 	top: 50%;
 	left: 50%;
+    transform: translate(-50%, -50%);
 } 
 #MicroPhone{
     display: block;
@@ -30,7 +31,7 @@ body {
     height: 128px;
     left: 25%;
     bottom: 25%;
-    background-image: url(./../../../public/images/Microphone.png);
+    background-image: url(./Microphone.png);
     transition-timing-function: cubic-bezier(0,.67,1,.57);
 }
 
@@ -43,7 +44,7 @@ body {
     margin: 0;
     left: 96px;
     top: 96px;
-    background-image: url(./../../../public/images/KeyUp.png);
+    background-image: url(./KeyUp.png);
     transition-timing-function: cubic-bezier(0,.67,1,.57);
 }
 
@@ -53,6 +54,6 @@ body {
     height: 256px;
     display: none;
     opacity: 0%;
-    background-image: url(./../../../public/images/Success.png);
+    background-image: url(./Success.png);
     transition-timing-function: cubic-bezier(0,.67,1,.57);
 }

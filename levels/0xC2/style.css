@@ -14,13 +14,14 @@ html{
 body {
 	padding: 0; 
 	margin: 0;
-	background-image: url(./../../../public/images/256-Background02.png);
+	background-image: url(./256-Background02.png);
 	width : 256px;
 	height : 256px;
 	overflow: hidden;
 	position: absolute;
 	top: 50%;
 	left: 50%;
+    transform: translate(-50%, -50%);
 } 
 
 #Print{
@@ -32,7 +33,7 @@ body {
     left: 64px;
     top: 64px;
     position: absolute;
-    background-image:url(./../../../public/images/Print.png); 
+    background-image:url(./Print.png); 
     transition-timing-function: cubic-bezier(0,.67,1,.57);
 }
 
@@ -44,7 +45,7 @@ body {
     margin: 0;
     left: 25%;
     top: 25%;
-    background-image: url(./../../../public/images/longTap.png);
+    background-image: url(./longTap.png);
     opacity: 0%;
     display: none;
     transition-timing-function: cubic-bezier(0,.67,1,.57);
@@ -56,5 +57,6 @@ body {
     height: 256px;
     display: none;
     opacity: 0%;
-    background-image: url(./../../../public/images/Success.png);transition-timing-function: cubic-bezier(0,.67,1,.57);
+    background-image: url(./Success.png);
+    transition-timing-function: cubic-bezier(0,.67,1,.57);
 }

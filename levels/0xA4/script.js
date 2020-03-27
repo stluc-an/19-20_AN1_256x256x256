@@ -19,10 +19,12 @@ function DropTheFile(){
 }
 
 function YouWon(event){
-    document.getElementById("DropMe").style.display = "none";
-    document.getElementById("DropMe").style.opacity = 0;
-    document.getElementById("Success").style.display = "block";
-    document.getElementById("Success").style.opacity = 100;
-    console.log(event);
-    AppManager.levelComplete();
+    if(event.type=="drop"){
+        document.getElementById("DropMe").style.display = "none";
+        document.getElementById("DropMe").style.opacity = 0;
+        document.getElementById("Success").style.display = "block";
+        document.getElementById("Success").style.opacity = 100;
+        
+            AppManager.levelComplete();
+  }
 }
