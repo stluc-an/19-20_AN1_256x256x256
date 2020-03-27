@@ -3,16 +3,35 @@
 	<head>
 		<title></title>
 		<style type="text/css">
+			body{
+				font-family: monospace;
+			}
 			ul{
 				list-style-type: none;
 				margin:0;
 				padding:0;
+			}
+			ul#levels{
 				column-count: 16;
+			}
+			ul#students ul{
+				column-count: 11;
+			}
+			ul#students ul li{
+				width: 50px;
+			}
+			ul#students ul li:first-child {
+    			/*width: 100px;*/
 			}
 			li{
 				position: relative;
 				margin:0;
-				padding-left:15px;
+				
+
+				text-overflow: "...";
+				overflow: hidden;
+				white-space: nowrap;
+
 			}
 			.loading:before{
 				content:"🔎";
@@ -28,16 +47,16 @@
 			}
 			.error:before{
 				content:"✘";
-				position: absolute;
-				left:5px;
+				width: 10px;
+				display: inline-block;
 			}
 			.success{
 				color:#9be31b;
 			}
 			.success:before{
 				content:"✔";
-				position: absolute;
-				left:5px;
+				width: 10px;
+				display: inline-block;
 			}
 			#link{
 				text-align: center;
@@ -54,8 +73,7 @@
 		</style>
 	</head>
 	<body>
-		<ul>
-		</ul>
+		<ul id="levels"></ul>
 
 		<div id="progressBar">
 			<svg width="100%" height="24px">
@@ -66,6 +84,9 @@
 		
 		<a id="link" href="/19-20_AN1_256x256x256/src/0xFFF/index.html" target="_blank">Run 256x256x256</a>
 
+		<ul id="students"></ul>
+
+		<script type="text/javascript" src="./students.js"></script>
 		<script type="text/javascript">
 			var searchParams = new URLSearchParams(location.search);
 			const BRANCH_NAME= searchParams.get("branch") ||"master";
@@ -94,6 +115,35 @@
 			};
 
 			const UI = (()=>{
+				const _studentList = (()=>{
+					const lvls = {};
+					return {
+						add : (value) => {
+							const li = document.createElement("li");
+							const ul = document.createElement("ul");
+							const nameElem = document.createElement("li");
+							nameElem.innerText=value.name;
+							ul.append(nameElem);
+							value.levels.map(lvl => {
+								const lvlElem = document.createElement("li");
+								lvlElem.setAttribute("data_id", lvl);
+								lvlElem.innerText=lvl;
+								lvls[lvl] = lvlElem;
+								ul.append(lvlElem);
+							});
+							li.append(ul);
+							document.querySelector("ul#students").append(li);
+						},
+						setSuccess : (name) => {
+							lvls[name].classList.remove("loading");
+							lvls[name].classList.add("success");
+						},
+						setError : (name) => {
+							lvls[name].classList.remove("loading");
+							lvls[name].classList.add("error");
+						}
+					}
+				})()
 				const _levelList = (()=> {
 					const lvls = {};
 					return {
@@ -117,7 +167,7 @@
 							a.setAttribute("href", "/19-20_AN1_256x256x256/src/0xFFF/index.html"+"?lvl="+JSON.stringify([name]));
 							a.innerText=name;
 							li.append(a);
-							document.querySelector("ul").append(li);
+							document.querySelector("ul#levels").append(li);
 							lvls[name] = li;
 						}
 					}
@@ -150,14 +200,19 @@
 					},
 					setSuccess : (name) => {
 						_levelList.setSuccess(name); 
+						_studentList.setSuccess(name); 
 						_progressBar.addFill();
 					},
 					setError : (name) => {
-						_levelList.setError(name); 
+						_levelList.setError(name);
+						_studentList.setError(name); 
 						_progressBar.addFill();
 					},
 					addLevel : (name)=>{
 						_levelList.add(name);
+					},
+					addStudent : (value)=>{
+						_studentList.add(value);
 					},
 					updateLink : (levels)=>{
 						const link = document.querySelector("#link");
@@ -219,6 +274,10 @@
 				});
 			}
 			
+			students.map(student => {
+				UI.addStudent(student);
+			});
+
 			getAvailableLevel().then(UI.updateLink);
 		</script>
 	</body>
