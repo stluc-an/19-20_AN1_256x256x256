@@ -1,0 +1,42 @@
+/*
+* @Author: Evrard Vincent
+* @Date:   2020-02-06 23:32:06
+* @Last Modified by:   ogre
+* @Last Modified time: 2020-02-06 23:35:41
+*/
+
+html{
+	padding: 0; 
+	margin: 0;
+	overflow: hidden;
+	background: black;
+}
+body{
+	padding: 0; 
+	margin: 0;
+	background: blue;
+	width : 256px;
+	height : 256px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-image: url(arrowshow.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+} 
+#objet{
+	background-color: red;
+	width: 246px;
+	height: 246px;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+}
+#objet:hover{
+	 box-shadow: 4px 4px yellow;
+}
+.hide {
+	display: none;
+}
