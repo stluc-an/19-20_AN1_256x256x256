@@ -16,7 +16,6 @@ function eventHandler(event){
         let touchP = document.querySelector("#touchP");
         touchP.classList.add("hide");
     }
-    AppManager.levelComplete();
     InteractionHelper.onKeyDown(eventHandler2);
 }
 
