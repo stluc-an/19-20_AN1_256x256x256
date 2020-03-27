@@ -24,12 +24,12 @@ body {
 	translate: -50% -50%;
 } 
 
-#chrome{
+#show{
 	position: relative;
 	width: 300px;
 }
 
-#glass{
+#sized{
 	position: relative;
 	width: 300px;
 }
