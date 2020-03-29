@@ -1,8 +1,8 @@
 /*
 * @Author: Evrard Vincent
 * @Date:   2020-02-06 23:32:06
-* @Last Modified by:   ogre
-* @Last Modified time: 2020-02-06 23:35:41
+* @Last Modified by:   oogre
+* @Last Modified time: 2020-03-29 00:05:13
 */
 
 html{
@@ -21,7 +21,7 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	translate: -50% -50%;
+	transform: translate(-50%,-50%);
 } 
 #panier{
 	width: 300px;

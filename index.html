@@ -18,6 +18,9 @@
 				column-count: 11;
 			}
 			
+			#students li[data_bug_css]{
+				color : blue;
+			}
 			ul#students ul li:first-child {
     			min-width: 100px;
 			}
@@ -84,6 +87,7 @@
 
 		<ul id="students"></ul>
 
+		<script type="text/javascript" src="./cssBug.js"></script>
 		<script type="text/javascript" src="./students.js"></script>
 		<script type="text/javascript">
 			var searchParams = new URLSearchParams(location.search);
@@ -113,12 +117,23 @@
 			};
 
 			const UI = (()=>{
+				const _cssBugList = (()=>{
+					const lvls = {};
+					return {
+						add : (value) => {
+							const e = document.querySelector("#students li[data_id='"+value+"']")
+							e.setAttribute("data_bug_css", 1)
+						}
+					}
+				})()
 				const _studentList = (()=>{
 					const lvls = {};
 					return {
 						add : (value) => {
 							const li = document.createElement("li");
 							const ul = document.createElement("ul");
+							ul.classList.add("student");
+							ul.setAttribute("data_student_name", value.name)
 							const nameElem = document.createElement("li");
 							nameElem.innerText=value.name;
 							ul.append(nameElem);
@@ -215,9 +230,48 @@
 					updateLink : (levels)=>{
 						const link = document.querySelector("#link");
 						link.setAttribute("href", link.getAttribute("href")+"?lvl="+JSON.stringify(levels))
+					},
+					updateBugList : ()=>{
+						cssBug.map(name => { 
+							_cssBugList.add(name);
+						});
 					}
 				}
 			})();
+
+			const testPullRequest = (requestId, githubCredential) => {
+				const pullUrl = "https://api.github.com/repos/stluc-an/19-20_AN1_256x256x256/pulls/[PULL_ID]";
+				return new Promise((resolve, reject)=> {
+					var request = new XMLHttpRequest();  
+					request.open('GET', pullUrl.replace("[PULL_ID]", requestId), true);
+					request.overrideMimeType("application/json");
+					request.setRequestHeader("Authorization", "Basic " + btoa(githubCredential))
+
+
+					request.onreadystatechange = function(){
+						if (request.readyState === 4){
+							if (request.status === 200) {  
+								let t  = JSON.parse(request.response);
+								let r = t.user.login;
+								if(t.merged){
+									r = "merged";
+								} else {
+									r = t.labels.map(label => {
+										return label.name
+									}).join(", ");
+								}
+								if(r == ""){
+									console.log(t);
+								}
+								return resolve(r);
+							} else {
+								return reject(request);
+							}
+						}
+					};
+					request.send();
+				});
+			}
 
 			const testLevel = (lvl_id)=>{
 				return new Promise((resolve, reject)=> {
@@ -226,14 +280,13 @@
 					request.overrideMimeType("text/html");
 					request.onreadystatechange = function(){
 						if (request.readyState === 4){
-							if (request.status === 404) { 
-								UI.setError(lvl_id); 
-								return reject(lvl_id);//alert("Oh no, it does not exist!");
-							}  
 							if (request.status === 200) {  
 								UI.setSuccess(lvl_id); 
-								return resolve(lvl_id);//alert("Oh yes, it does exist!");
-							}  
+								return resolve(lvl_id);
+							}  else {
+								UI.setError(lvl_id); 
+								return reject(lvl_id);
+							}
 						}
 					};
 					UI.setLoading(lvl_id);
@@ -271,12 +324,50 @@
 					});
 				});
 			}
+
+			const quote = async ()=>{
+				const details =  await confirm("Do you want more details ? ")
+				if(!details)throw new Error("Details not wanted");
+				const githubCredential =  await prompt("github (user:password)");
+				if(!githubCredential)throw new Error("No github Credential");
+				const list = {};
+				Object.values(document.querySelectorAll(".student")).map(s => {
+					let counter = s.querySelectorAll(".success").length;
+					counter -= s.querySelectorAll("[data_bug_css]").length;
+					list[s.getAttribute("data_student_name")] = {
+						levels : s.querySelectorAll(".success").length,
+						bugs_css : s.querySelectorAll("[data_bug_css]").length
+					};
+				});
+				const pullRequests = await Promise.all(students.map(async student => {
+					const r = await Promise.all(student.pullRequest.map(async pullRequest=>{
+						return testPullRequest(pullRequest, githubCredential);
+					}));
+					return {
+						studentName : student.name, 
+						status : r.join(", ")
+					};
+				}));
+				pullRequests.map(pullRequest => {
+					list[pullRequest.studentName].pullRequest = pullRequest.status;
+				});
+				return list;
+			}
 			
 			students.map(student => {
 				UI.addStudent(student);
 			});
-
-			getAvailableLevel().then(UI.updateLink);
+			
+			getAvailableLevel()
+			.then(async (data)=>{
+				UI.updateLink(data);
+				const result = await quote();
+				alert(JSON.stringify(result));
+				UI.updateBugList();
+			})
+			.catch(error=>{
+				window.location = document.querySelector("a#link").getAttribute("href");
+			});
 		</script>
 	</body>
 </html>
