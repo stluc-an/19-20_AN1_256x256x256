@@ -1,8 +1,8 @@
 /*
 * @Author: Evrard Vincent
 * @Date:   2020-02-06 23:32:06
-* @Last Modified by:   ogre
-* @Last Modified time: 2020-02-06 23:35:41
+* @Last Modified by:   oogre
+* @Last Modified time: 2020-03-27 23:01:46
 */
 
 html{
@@ -43,7 +43,7 @@ body {
 	top: 0%;
 	left: 0%;
 	background-repeat: no-repeat;
-	background-image: url(Lesroses.gif);
+	background-image: url(lesroses.gif);
 	background-size: 100%;
 }
 .hide{
