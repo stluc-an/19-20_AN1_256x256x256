@@ -2,7 +2,7 @@
   256x256x256 - index.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2020-02-06 12:19:52
-  @Last Modified time: 2020-02-28 14:47:56
+  @Last Modified time: 2020-05-15 12:19:18
 \*----------------------------------------*/
 import interact from "./libs/interact/interact.1.3.4.min.js";
 import Hammer from "./libs/hammer/hammer.2.0.8.min.js";
@@ -274,5 +274,5 @@ if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and 
 }
 
 
-
+InteractionHelper.onDropFile("body", ()=>false);
 export default InteractionHelper;

@@ -394,6 +394,7 @@ if (typeof document.hidden !== "undefined") {
   visibilityChange = "webkitvisibilitychange";
 }
 
+InteractionHelper.onDropFile("body", () => false);
 var _default = InteractionHelper;
 exports.default = _default;
 },{"./libs/hammer/hammer.2.0.8.min.js":4,"./libs/interact/interact.1.3.4.min.js":5,"core-js/modules/es6.symbol":80,"core-js/modules/web.dom.iterable":82}],4:[function(require,module,exports){
