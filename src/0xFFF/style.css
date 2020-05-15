@@ -4,6 +4,9 @@ body, html {
 	margin: 0;
 	background: black;
 	color: white;
+	position: relative;
+	height: 100%;
+	width: 100%;
 } 
 iframe {
 	width: 256px;
