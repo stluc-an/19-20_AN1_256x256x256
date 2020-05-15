@@ -394,7 +394,6 @@ if (typeof document.hidden !== "undefined") {
   visibilityChange = "webkitvisibilitychange";
 }
 
-InteractionHelper.onDropFile("body", () => false);
 var _default = InteractionHelper;
 exports.default = _default;
 },{"./libs/hammer/hammer.2.0.8.min.js":4,"./libs/interact/interact.1.3.4.min.js":5,"core-js/modules/es6.symbol":80,"core-js/modules/web.dom.iterable":82}],4:[function(require,module,exports){
@@ -5139,8 +5138,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   256^3 - main.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2020-02-06 23:16:10
-  @Last Modified time: 2020-02-28 14:43:45
+  @Last Modified time: 2020-05-15 12:23:02
 \*----------------------------------------*/
+_AppManager.default.ready(() => {
+  _InteractionHelper.default.onDropFile("body", () => false);
+});
+
 window.Animator = _Animator.default;
 window.AppManager = _AppManager.default;
 window.InteractionHelper = _InteractionHelper.default;
