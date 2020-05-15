@@ -129,13 +129,18 @@
 				const _studentList = (()=>{
 					const lvls = {};
 					return {
+						//https://stluc-an.github.io/19-20_AN1_256x256x256/src/0xFFF/index.html?lvl=[%220x44%22]
 						add : (value) => {
 							const li = document.createElement("li");
 							const ul = document.createElement("ul");
 							ul.classList.add("student");
 							ul.setAttribute("data_student_name", value.name)
 							const nameElem = document.createElement("li");
-							nameElem.innerText=value.name;
+							const a = document.createElement("a");
+							a.setAttribute("target", "_blank");
+							a.setAttribute("href", "/19-20_AN1_256x256x256/src/0xFFF/index.html"+"?lvl="+JSON.stringify([value.levels]));
+							a.innerText=value.name;
+							nameElem.append(a);
 							ul.append(nameElem);
 							value.levels.map(lvl => {
 								const lvlElem = document.createElement("li");
