@@ -361,9 +361,11 @@
 			getAvailableLevel()
 			.then(async (data)=>{
 				UI.updateLink(data);
+				/*
 				const result = await quote();
 				alert(JSON.stringify(result));
 				UI.updateBugList();
+				*/
 			})
 			.catch(error=>{
 				window.location = document.querySelector("a#link").getAttribute("href");

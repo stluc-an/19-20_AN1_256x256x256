@@ -2,7 +2,7 @@
   256x256x256 - script.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2018-02-27 12:27:03
-  @Last Modified time: 2020-03-15 14:33:55
+  @Last Modified time: 2020-05-15 11:21:37
 \*----------------------------------------*/
 
 
@@ -96,6 +96,7 @@ const onLevelLoaded = () => {
 }
 
 const onLevelSuccess = () => {
+	clearTimeout(window.TIMEOUT_FAIL);
 	Animations.Close(function(){
 		Animations.Magnify(375, document.querySelector(".score"));
 		LevelManager.next();
