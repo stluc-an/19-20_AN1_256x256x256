@@ -2,7 +2,7 @@
   256x256x256 - script.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2018-02-27 12:27:03
-  @Last Modified time: 2020-05-15 11:21:37
+  @Last Modified time: 2020-05-15 12:11:37
 \*----------------------------------------*/
 
 
@@ -19,6 +19,7 @@ const LEVELS = JSON.parse(searchParams.get("lvl")) || [
 AppManager.ready(() => {
 	LevelManager = LevelManager();
 	LevelManager.next();
+	InteractionHelper.onDropFile("body", ()=>false);
 });
 
 let LevelManager = () => {
