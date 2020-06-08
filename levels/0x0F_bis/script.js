@@ -11,6 +11,8 @@ function actionOnTap(event){
 }
 
 function actionOnSound(event){
-	console.log(event);
-	AppManager.levelComplete();
+  console.log(event.intensity);
+  if(event.intensity > 30.00){
+    AppManager.levelComplete();
+  }
 }
