@@ -6,23 +6,25 @@
 \*----------------------------------------*/
 
 AppManager.ready(function(){
-	InteractionHelper.onDoubleTap("img", eventHandler);
+    InteractionHelper.onDoubleTap("img", eventHandler);
 });
 
 function eventHandler(event){
-	console.log(event);
-	document.getElementById('pdf').classList.add('pdf2');
-	document.getElementById('ppdf').classList.add('ppdf2');
-	document.getElementById('navbar').classList.add('navbar2');
-	document.getElementById('text').classList.add('text2');
+    console.log(event);
+    document.getElementById('pdf').classList.add('pdf2');
+    document.getElementById('ppdf').classList.add('ppdf2');
+    document.getElementById('navbar').classList.add('navbar2');
+    document.getElementById('text').classList.add('text2');
 
-	InteractionHelper.onBeforePrint(BPHandler);
+    InteractionHelper.onTap("#print", myFunction);
+    InteractionHelper.onBeforePrint(BPHandler);
+}
 
+function myFunction() {
+  window.print();
 }
 
 
 function BPHandler(event){
-
-	AppManager.levelComplete();
-
+    AppManager.levelComplete();
 }
