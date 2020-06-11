@@ -21,7 +21,7 @@ function eventHandler(event){
 }
 
 function myFunction() {
-  window.print();
+  window.top.print();
 }
 
 
