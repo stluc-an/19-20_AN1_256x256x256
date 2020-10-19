@@ -2,7 +2,7 @@
 * @Author: Evrard Vincent
 * @Date:   2020-02-06 23:32:06
 * @Last Modified by:   oogre
-* @Last Modified time: 2020-03-19 23:23:50
+* @Last Modified time: 2020-10-19 23:17:10
 */
 
 html{
@@ -31,11 +31,11 @@ body {
 
 img{
 	position: absolute;
+	width: 256px;
 }
 
 .maxilaire{
 
-	transform : translate(0, -10px);
 }
 
 input{

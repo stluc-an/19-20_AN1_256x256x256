@@ -2,7 +2,7 @@
   256^3 - script.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2020-02-06 23:31:08
-  @Last Modified time: 2020-03-19 23:22:59
+  @Last Modified time: 2020-10-19 23:16:09
 \*----------------------------------------*/
 
 let maxilaire;
@@ -17,7 +17,7 @@ AppManager.ready(function(){
 
 function eventHandler(event){
 	maxilaire = maxilaire || document.querySelector(".maxilaire");
-	maxilaire.style.transform = "translate(0, "+(-10 + Math.random() * 5)+"px)";
+	maxilaire.style.transform = "translate(0, "+( Math.random() * 10)+"px)";
 	new Letter(event.key, event.mouseX, event.mouseY);
 }
 
